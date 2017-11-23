@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Looking back at consoles and codecs"
-date:   2017-09-28 11:28:12 +0200
+date:   2017-11-23 11:28:12 +0200
 categories: musing update
 ---
 # Looking back at consoles and codecs
