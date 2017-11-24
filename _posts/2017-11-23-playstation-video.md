@@ -2,7 +2,6 @@
 layout: post
 title:  "Looking back at consoles and codecs"
 date:   2017-11-23 11:28:12 +0200
-categories: musing update
 ---
 # Classic consoles and codecs
 ## What was once mind blowing
@@ -19,7 +18,7 @@ However, there was a new technology arriving on the scene. The compact disc. Use
 
 ![Look at those arms!](https://i.imgur.com/mqoBUu8.jpg)
 
-Ok maybe the basic models haven't aged so well, but the the FMV sequences had better lighting, more detailed models, etc... and despite the low resolution they still look good today.
+Ok maybe the basic models haven't aged so well, but the the FMV sequences had better lighting, more detailed models, etc... and despite the low resolution they still look ok today.
 
 ![Just sleeping](https://i.imgur.com/THiW2gs.jpg)
 
@@ -31,11 +30,19 @@ Audio had long been composed in MIDI formats or by writing programs for the cons
 
 Sometimes you wander the web and find some absolute gems. One of the best documents I have ever stumbled across has to be  [Everything You Have Always Wanted to Know about the Playstation But Were Afraid to Ask.](https://gamehacking.org/faqs/PSX.pdf). A dense tome detailing the internals of the playstation, how it worked and what was in it. There's a section on something called the Motion Decoder which describes hardware used to decode "JPEG like images" in macroblocks (16x16 pixel segments) for display by the GPU. The motion decoder decodes at a maximal rate of 9000 macro blocks per second or about 30 frames per second at a resolution of 320x240. It's crazy what passed as high tech back in the day. So, were playstation FMVs motion jpeg videos? The hardware was there and who would write a software decoder for another codec? This was the early 90s, we didn't have the CPU power to do that! In fact a lot of work has been done in decoding playstation games and the videos in them. There's even a converter utility on github to take the playstation specific file formats and convert them into more standard files [jpsxdec](https://github.com/m35/jpsxdec). Motion JPEG is a notoriously bad video codec where each frame is spatially, but not temporally compressed. That is, each frame is simply compressed as a jpeg and displayed one after the other. This leads to big files which leads to lots of discs. So how much of a playstation game is just jpeg data?
 
-## Analysis of Video files
+## Analysis of disc files
 
-### Shared files
+So lets look at those files. Just so it's clear I own a copy of FF7 for the playstation. That said, I'm using iso images with the following hashes.
+```
+disc1 -
+disc2 -
+disc3 -
+```
+Right so, thankfully each disc is easy to mount and we see...
 
-### How big is Final Fantasy 7 really?
 
+## Shared files
+
+## So how big is Final Fantasy 7 really?
 
 ## Implications and context
