@@ -61,7 +61,7 @@ Using ddh on the three mounted disc images, I found some interesting results.
 Using du and tree as sanity checks I verified that there are indeed 10131 files and that the disc usage is indeed 1756MB (which makes sense for a game of 3 CDs). What's immediately shocking to see is that the unique files found sum up to be less than what can fit in 2 CDs worth of storage space. I spent days pouring over this and something I ran into while writing this post is the fact that there are duplicates of the same file on the same disc. This seems to be the result of a tactic I recall some game developers talking about for older disc based consoles. The idea was to place the same file in multiple locations on disc to lower the seek time for accessing these files and thus to make the game play a little smoother.
 
 ## Shared files
-So what are the shared files? Well with 2950 of them (that's a unique count no an instance count) I won't go into all of them. Some shared files are pretty obvious such as these magic files from the magic directories
+So what are the shared files? Well with 2950 of them (that's a unique count not an instance count) I won't go into all of them. Some shared files are pretty obvious such as these magic files from the magic directories
 ```
 FF7Disc1/magic/kona.bin - e04de3eb68049869
 FF7Disc2/magic/kona.bin - e04de3eb68049869
