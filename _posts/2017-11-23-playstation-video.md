@@ -88,9 +88,9 @@ Motion jpeg is a horribly inefficient video codec. As I was unable to get a play
 Well if you discount the video files and just look at the unique game files then FF7 is 240MB, but even with all the unique files the game looks like it could have easily fit into two discs. If history had taken a different path and mpeg1 support had been baked into the system the total game size would have been 843.2MB. So why was FF7 a three disc game? I don't have an answer for why FF7 came on three discs. I started this article with the thought that I could point ant laugh at an old game system about how bad the video codecs were, but that doesn't seem to even be a problem. The game itself seems like it could have been a two disc game without much work. I think that had there been a better video codec and had there been a few cuts this could have even been a single disc game.
 
 I have a few additional thoughts as well
-* 1) Duplicate files may have been necessary for the game to play smoothly due to slow CD speeds and/or low ram capacity
-* 2) Mpeg decoding may have been far more expensive than motion jpeg and multiple CDs were probably still cheaper than cartridges (which were the alternative)
-* 3) 3 Discs may have just been for the wow factor
+* Duplicate files may have been necessary for the game to play smoothly due to slow CD speeds and/or low ram capacity
+* Mpeg decoding may have been far more expensive than motion jpeg and multiple CDs were probably still cheaper than cartridges (which were the alternative)
+* 3 Discs may have just been for the wow factor
 
 ```
 Thanks for reading
