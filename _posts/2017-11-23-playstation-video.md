@@ -78,7 +78,7 @@ FF7Disc2/magic/vaha0_5.lzs - fbd9bd6ca8089d13
 FF7Disc3/magic/tupon1.lzs - fbd9bd6ca8089d13
 FF7Disc3/magic/vaha0_5.lzs - fbd9bd6ca8089d13
 ```
-I don't have an explanation for these renamed files, but they're quite frequent and I think it's well worth loading up your disks and taking a look at all the repeated files if you're interested in the game development that went into this duplication as there is a ton of it.
+I don't have an explanation for these renamed files, but they're quite frequent and I think it's well worth loading up your discs and taking a look at all the repeated files if you're interested in the game development that went into this duplication as there is a ton of it.
 
 ## So about those video files
 
