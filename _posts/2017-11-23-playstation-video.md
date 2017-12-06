@@ -63,20 +63,20 @@ Using du and tree as sanity checks I verified that there are indeed 10131 files 
 ## Shared files
 So what are the shared files? Well with 2950 of them (that's a unique count no an instance count) I won't go into all of them. Some shared files are pretty obvious such as these magic files from the magic directories
 ```
-FF7Disk1/magic/kona.bin - e04de3eb68049869
-FF7Disk2/magic/kona.bin - e04de3eb68049869
-FF7Disk3/magic/kona.bin - e04de3eb68049869
+FF7Disc1/magic/kona.bin - e04de3eb68049869
+FF7Disc2/magic/kona.bin - e04de3eb68049869
+FF7Disc3/magic/kona.bin - e04de3eb68049869
 ```
 Assuming Kona.bin is some magic spell (a coffee spell maybe?) which was available to the player early in the game then it would need to be on all three discs simply because the player might cast it at any time. Other obvious files are videos like the opening demo which is stored on all three discs.
 
 Some are less obvious such as magic files which have the same hash, but which are stored with a different name (these files were manually inspected after discovery)
 ```
-FF7Disk1/magic/tupon1.lzs - fbd9bd6ca8089d13
-FF7Disk1/magic/vaha0_5.lzs - fbd9bd6ca8089d13
-FF7Disk2/magic/tupon1.lzs - fbd9bd6ca8089d13
-FF7Disk2/magic/vaha0_5.lzs - fbd9bd6ca8089d13
-FF7Disk3/magic/tupon1.lzs - fbd9bd6ca8089d13
-FF7Disk3/magic/vaha0_5.lzs - fbd9bd6ca8089d13
+FF7Disc1/magic/tupon1.lzs - fbd9bd6ca8089d13
+FF7Disc1/magic/vaha0_5.lzs - fbd9bd6ca8089d13
+FF7Disc2/magic/tupon1.lzs - fbd9bd6ca8089d13
+FF7Disc2/magic/vaha0_5.lzs - fbd9bd6ca8089d13
+FF7Disc3/magic/tupon1.lzs - fbd9bd6ca8089d13
+FF7Disc3/magic/vaha0_5.lzs - fbd9bd6ca8089d13
 ```
 I don't have an explanation for these renamed files, but they're quite frequent and I think it's well worth loading up your disks and taking a look at all the repeated files if you're interested in the game development that went into this duplication as there is a ton of it.
 
