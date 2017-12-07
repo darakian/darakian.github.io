@@ -67,7 +67,7 @@ FF7Disc1/magic/kona.bin - e04de3eb68049869
 FF7Disc2/magic/kona.bin - e04de3eb68049869
 FF7Disc3/magic/kona.bin - e04de3eb68049869
 ```
-Assuming Kona.bin is some magic spell (a coffee spell maybe?) which was available to the player early in the game then it would need to be on all three discs simply because the player might cast it at any time. Other obvious files are videos like the opening demo which is stored on all three discs.
+Assuming Kona.bin is some magic spell (a coffee related spell maybe?) which was available to the player early in the game then it would need to be on all three discs simply because the player might cast it at any time. Other obvious files are videos like the opening demo which is stored on all three discs.
 
 Some are less obvious such as magic files which have the same hash, but which are stored with a different name (these files were manually inspected after discovery)
 ```
