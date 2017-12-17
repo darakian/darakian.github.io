@@ -42,7 +42,7 @@ Right so, thankfully each disc is easy to mount and we see a similar layout on e
 battle      enemy2      enemy4      enemy6      init        menu        mint        scus_941.6x stage1      startup     world
 enemy1      enemy3      enemy5      field       magic       mini        movie       sound       stage2      system.cnf
 ```
-Wonderful! There's a folder for all the movies just sitting there! On disc three there's an extra folder named snova, but never the less it's pretty consistant and should be easy to analyse. I could have used a collection of unix utilities to look further into this, but instead I wrote a tool for this which traverses directories, hashes files and builds lists. [ddh](https://github.com/darakian/rustExperiments/tree/master/ddh)
+Wonderful! There's a folder for all the movies just sitting there! On disc three there's an extra folder named snova, but never the less it's pretty consistent and should be easy to analyse. I could have used a collection of unix utilities to look further into this, but instead I wrote a tool for this which traverses directories, hashes files and builds lists. [ddh](https://github.com/darakian/rustExperiments/tree/master/ddh)
 
 First lets look at the movies with ddh
 ```
@@ -60,7 +60,7 @@ Using ddh on the three mounted disc images, I found some interesting results.
 144 Single instance files: 871 Megabytes
 2990 Shared instance files: 297 Megabytes (9987 instances)
 ```
-Using du and tree as sanity checks I verified that there are indeed 10131 files and that the disc usage is indeed 1756MB (which makes sense for a game of 3 CDs). What's immediately shocking to see is that the unique files found sum up to be less than what can fit in 2 CDs worth of storage space. I spent days pouring over this and something I ran into while writing this post is the fact that there are duplicates of the same file on the same disc. This seems to be the result of a tactic I recall some game developers talking about for older disc based consoles. The idea was to place the same file in multiple locations on disc to lower the seek time for accessing these files and thus to make the game play a little smoother.
+Using du and tree as sanity checks I verified that there are indeed 10131 files and that the disc usage is indeed 1756MB (which makes sense for a game of 3 CDs). What's immediately shocking to see is that the unique files found sum up to be less than what can fit in 2 CDs worth of storage space. I spent days pouring over this and something I ran into while writing this post is the fact that there are duplicates of the same file on the same disc. This seems to be the result of a tactic I recall some game developers talking about for older disc based consoles. The idea was to place the same file in multiple locations on disc to lower the seek time for accessing these files and thus to make the game play a little smoother. [RAM and Crash](https://www.gamasutra.com/view/news/310660/Memory_Matters_A_special_RAM_edition_of_Dirty_Coding_Tricks.php)
 
 ## Shared files
 So what are the shared files? Well with 2990 of them in just under 10,000 places so, I won't go into all of them. Some shared files are pretty obvious such as these magic files from the magic directories
