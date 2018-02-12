@@ -42,7 +42,7 @@ Right so, thankfully each disc is easy to mount and we see a similar layout on e
 battle      enemy2      enemy4      enemy6      init        menu        mint        scus_941.6x stage1      startup     world
 enemy1      enemy3      enemy5      field       magic       mini        movie       sound       stage2      system.cnf
 ```
-Wonderful! There's a folder for all the movies just sitting there! On disc three there's an extra folder named snova, but never the less it's pretty consistent and should be easy to analyse. I could have used a collection of unix utilities to look further into this, but instead I wrote a tool for this which traverses directories, hashes files and builds lists. [ddh](https://github.com/darakian/rustExperiments/tree/master/ddh)
+Wonderful! There's a folder for all the movies just sitting there! On disc three there's an extra folder named snova, but never the less it's pretty consistent and should be easy to analyse. I could have used a collection of unix utilities to look further into this, but instead I wrote a tool for this which traverses directories, hashes files and builds lists. [ddh](https://github.com/darakian/ddh/tree/master)
 
 First lets look at the movies with ddh
 ```
