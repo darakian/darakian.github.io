@@ -91,7 +91,7 @@ Well if you discount the video files and just look at the unique game files then
 
 I have a few additional thoughts as well
 * Duplicate files may have been necessary for the game to play smoothly due to slow CD speeds and/or low ram capacity
-* Mpeg decoding may have been far more expensive than motion jpeg and multiple CDs were probably not worth the cost of developing and testing a custom mpeg decoder.
+* Implementing an mpeg decoder in software may not have been feasible on the playstation CPU and even if it were the cost of developing such a decoder would probably have been larger than the cost of an extra CD in manufacture.
 * 3 Discs may have just been for the wow factor
 
 ```
