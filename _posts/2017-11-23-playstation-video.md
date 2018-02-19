@@ -60,7 +60,7 @@ Using ddh on the three mounted disc images, I found some interesting results.
 144 Single instance files: 871 Megabytes
 2990 Shared instance files: 297 Megabytes (9987 instances)
 ```
-Using du and tree as sanity checks I verified that there are indeed 10131 files and that the disc usage is indeed 1756MB (which makes sense for a game of 3 CDs). What's immediately shocking to see is that the unique files found sum up to be less than what can fit in 2 CDs worth of storage space. I spent days pouring over this and something I ran into while writing this post is the fact that there are duplicates of the same file on the same disc. This seems to be the result of a tactic I recall some game developers talking about for older disc based consoles. The idea was to place the same file in multiple locations on disc to lower the seek time for accessing these files and thus to make the game play a little smoother. [RAM and Crash](https://www.gamasutra.com/view/news/310660/Memory_Matters_A_special_RAM_edition_of_Dirty_Coding_Tricks.php)
+Using du and tree as sanity checks I verified that there are indeed 10131 files and that the disc usage is indeed 1756MB (which makes sense for a game of 3 CDs). What's immediately shocking to see is that the unique files found sum up to be less than what can fit in 2 CDs worth of storage space. I spent days pouring over this and something I ran into while writing this post is the fact that there are duplicates of the same file on the same disc. This seems to be the result of a tactic I recall some game developers talking about for older disc based consoles. The idea was to place the same file in multiple locations on disc to lower the seek time for accessing these files and thus to make the game play a little smoother. Crash Bandicoot is the famous example here where the game world was dissected into "pages" of which contained the necessary data for the area physically around Crash. As Crash ran down a level pages behind him were freed and pages ahead were loaded. This hid the latency of the disc at the cost of potential double/triple/etc instances enemy models, sound files or other game data. [Crash RAM](https://www.gamasutra.com/view/news/310660/Memory_Matters_A_special_RAM_edition_of_Dirty_Coding_Tricks.php).
 
 ## Shared files
 So what are the shared files? Well with 2990 of them in just under 10,000 places I won't go into all of them, but there are a few classes. Some shared files are pretty obvious such as these magic files from the magic directories
@@ -91,7 +91,7 @@ Well if you discount the video files and just look at the unique game files then
 
 I have a few additional thoughts as well
 * Duplicate files may have been necessary for the game to play smoothly due to slow CD speeds and/or low ram capacity
-* Mpeg decoding may have been far more expensive than motion jpeg and multiple CDs were probably still cheaper than cartridges (which were the alternative)
+* Mpeg decoding may have been far more expensive than motion jpeg and multiple CDs were probably not worth the cost of developing and testing a custom mpeg decoder.
 * 3 Discs may have just been for the wow factor
 
 ```
