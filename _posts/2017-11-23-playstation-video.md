@@ -47,7 +47,7 @@ Wonderful! There's a folder for all the movies just sitting there! On disc three
 First lets look at the movies with ddh
 ```
 199 Total files (with duplicates): 1025 Megabytes
-123 Total files (without duplicates): 928 Megabytes
+123 Total files (without duplicates): 867 Megabytes
 83 Single instance files: 867 Megabytes
 40 Shared instance files: 61 Megabytes (116 instances)
 ```
@@ -84,10 +84,10 @@ I don't have an explanation for these renamed files, but they're quite frequent 
 
 ## So about those video files
 
-Motion jpeg is a horribly inefficient video codec. As I was unable to get a playstation video converter working I had to think about this by proxy. I found some old low resolution video and encoded it to both mpeg1 and motion jpeg. Looking over a large selection of video I found that the mpeg1 video was about 65% the size of the motion jpeg. The implication here being that if all the video files in FF7 could be encoded in mpeg1 the total file size would drop to 603.2MB.
+Motion jpeg is a horribly inefficient video codec. As I was unable to get a playstation video converter working I had to think about this by proxy. I found some old low resolution video and encoded it to both mpeg1 and motion jpeg. Looking over a large selection of video I found that the mpeg1 video was about 65% the size of the motion jpeg. The implication here being that if all the video files in FF7 could be encoded in mpeg1 the total file size would drop to about 566MB.
 
 ## So how big is Final Fantasy 7?
-Well if you discount the video files and just look at the unique game files then FF7 is 297MB, but even with all the unique files the game looks like it could have easily fit into two discs. If history had taken a different path and mpeg1 support had been baked into the system the total game size would have been 843.2MB. So why was FF7 a three disc game? No idea. I started this article with the thought that I could point and laugh at an old game system about how bad the video codecs were, but that doesn't seem to even be a problem. The game itself seems like it could have been a two disc game without much work. I think that had there been a better video codec and had there been a few cuts this could have even been a single disc game.
+Well if you discount the video files and just look at the unique game files then FF7 is 297MB, but even with all the unique files the game looks like it could have easily fit into two discs. If history had taken a different path and mpeg1 support had been baked into the system the total game size would have been about 863MB. A two disc game. Even without a better video codec the game would could have fit on two discs with 152MB to spare. So why was FF7 a three disc game? No idea. I started this article with the thought that I could point and laugh at an old game system about how bad the video codecs were, but that doesn't seem to even be a problem. The game itself seems like it could have been a two disc game without much work. My best guess is that the 2MB of ram in the playstation required swapping assets constantly and the slow disc drive lead to duplicate files to reduce latency. I think that had there been a better video codec or a faster disc drive we would have seen a two disc FF7. Had there been a few cuts this could have even been a single disc game.
 
 I have a few additional thoughts as well
 * Duplicate files may have been necessary for the game to play smoothly due to slow CD speeds and/or low ram capacity
