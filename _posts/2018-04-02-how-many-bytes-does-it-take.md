@@ -59,8 +59,8 @@ And here as a line graph
 
 We can see a massive growth in the number of unique hashes starting at 13 bytes which makes my initial guess of 128KB look impressively wrong. When you think about it there are 8 bits to the byte and thus 2^104 possible 13 byte patters. It's actually pretty shocking how many files were so similar in the 12 byte (2^96) space, but then it seems that files tend to cluster. It turns out that you can make a pretty good hash out of as few as 13 bytes and you will probably start hitting a point of diminishing returns by 20 bytes.
 
-# Using it all 
-At the onset the choice of pre hashing size seemed to be a choice of kilobytes, but as it turns out even one kilobyte is far in excess of what is really necessary. However, storage doesn't actually give us access to one byte at a time. Storage gives us access to one block at a time and for modern storage systems one block is 4096 bytes. So given the nature of block storage the wise choice is to use all bytes given to us by our one read and to hash 4096 bytes.
+# That's good hash
+At the onset the choice of pre hashing size seemed to be a choice of kilobytes, but as it turns out even one kilobyte is far in excess of what is really necessary. However, storage doesn't actually give us access to one byte at a time. Storage gives us access to one block at a time and for modern storage systems one block is 4096 bytes. That is, the cost of reading 1 to 4096 bytes is the same. So given the nature of block storage the wise choice is to use all bytes given to us by our one read and to hash 4096 bytes.
 
 ```
 Thanks for reading
