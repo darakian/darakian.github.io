@@ -14,7 +14,7 @@ Over the past few months I've written a file duplicate finder [ddh](https://gith
 This worked fine for some basic tests on my main main system and after the performance work I had full system scans going in a few seconds. Brilliant! I've done a test and received a glowing result. Job done.
 
 # Job not actually done
-Working with solid state storage is great, but testing on solid state storage alone can hide performance issues. To avoid this testing on continued with a collection of files stored on a spinning disc drive and lead to instant disappointment with roughly 1h 30m of runtime. The full output was as follows
+Working with solid state storage is great, but testing on solid state storage alone can hide performance issues. To avoid this testing on continued with a collection of files stored on a spinning disk drive and lead to instant disappointment with roughly 1h 30m of runtime. The full output was as follows
 ```
 21262 Total files (with duplicates): 687907721 Kilobytes
 20334 Total files (without duplicates): 683634507 Kilobytes
@@ -38,7 +38,7 @@ Interesting to know and really quite intuitive as well. So, there's a simple sol
 4. Check for matching pre hashes and do a full hash on matches
 5. Sort by hash and display results as requested
 ```
-For the first implementation I used a pre hash size of 128KB for no reason other than I like that number. Rerun the spinning disc test on the same dataset and the runtime drops to 10 minutes. I also reran the test on my system drive and got a 1 second slowdown, but none the less; Fantastic! A bit of playing with the pre hash size and I was able to get the runtime down to about 5 minutes and this presented an interesting tradeoff; lower the pre hash size to reduce the time spent in step 3, but at the cost of increasing the time spent in step 5. So we come to the titular question; how many bytes does it take to make a good hash?
+For the first implementation I used a pre hash size of 128KB for no reason other than I like that number. Rerun the spinning disk test on the same dataset and the runtime drops to 10 minutes. I also reran the test on my system drive and got a 1 second slowdown, but none the less; Fantastic! A bit of playing with the pre hash size and I was able to get the runtime down to about 5 minutes and this presented an interesting tradeoff; lower the pre hash size to reduce the time spent in step 3, but at the cost of increasing the time spent in step 5. So we come to the titular question; how many bytes does it take to make a good hash?
 
 # How to make a good hash
 The problem statement at this point is
@@ -47,7 +47,7 @@ The problem statement at this point is
 or put another way
 > How few bytes can we read and still differentiate *most* files?
 
-Ignoring the undefined term *most* it's obvious that files which are duplicates will require full reads, but those are the degenerate cases which we ignore. The files we care about are the files which are different, but which may seem similar. File headers are bound to be similar, but then not all files have headers and some that have headers have potentially unique data in them. So, this is an easy enough question to answer with a little code, at least for a single dataset. Lets just hash all my files at one, two, three, etc... bytes and find out where we hit diminishing returns. Using my spinning disc dataset
+Ignoring the undefined term *most* it's obvious that files which are duplicates will require full reads, but those are the degenerate cases which we ignore. The files we care about are the files which are different, but which may seem similar. File headers are bound to be similar, but then not all files have headers and some that have headers have potentially unique data in them. So, this is an easy enough question to answer with a little code, at least for a single dataset. Lets just hash all my files at one, two, three, etc... bytes and find out where we hit diminishing returns. Using my spinning disk dataset
 
 ![The gif](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2018-04-02-how-many-bytes-does-it-take/hashbuckets.gif)
 
