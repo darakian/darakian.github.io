@@ -42,10 +42,10 @@ For the first implementation I used a pre hash size of 128KB for no reason other
 
 # How to make a good hash
 The problem statement at this point is
-> How many bytes of a file must be read to differentiate it from *most* other files
+> How many bytes of a file must be read to differentiate it from *most* other files?
 
 or put another way
-> How few bytes can we read and still differentiate *most* files
+> How few bytes can we read and still differentiate *most* files?
 
 Ignoring the undefined term *most* it's obvious that files which are duplicates will require full reads, but those are the degenerate cases which we ignore. The files we care about are the files which are different, but which may seem similar. File headers are bound to be similar, but then not all files have headers and some that have headers have potentially unique data in them. So, this is an easy enough question to answer with a little code, at least for a single dataset. Lets just hash all my files at one, two, three, etc... bytes and find out where we hit diminishing returns. Using my spinning disc dataset
 
