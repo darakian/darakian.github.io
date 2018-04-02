@@ -26,7 +26,7 @@ The dataset was just under 700GB with about 21,000 files which gives some rough 
 Why was ddh only getting through something like 3.8 files per second when there were only 1094 duplicates?
 
 # Files tend to cluster
-Upon further analysis it became clear that the reason for the poor performance was that files (my files at least) tend to cluster in file sizes. In fact here's a graph of the file sizes present in my dataset
+Upon further analysis it became clear that the reason for the poor performance was that files (my files at least) tend to cluster in file sizes. What this means is that for some given file sizes there's bound to be more demand on hashing than on other file sizes. In my case the issue is quite pronounced. In fact here's a graph of the file sizes present in my dataset
 
 ![Files clustering](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2018-04-02-how-many-bytes-does-it-take/FileSizes.png)
 
