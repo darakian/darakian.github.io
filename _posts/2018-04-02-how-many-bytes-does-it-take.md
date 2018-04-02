@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How many bytes does it take to make a good hash?"
-date:   2018-04-04 20:00:00 +0100
+date:   2018-04-02 20:00:00 +0100
 ---
 # The Background
 Over the past few months I've written a file duplicate finder [ddh](https://github.com/darakian/ddh). Originally ddh was just a way to ease myself into the rust language, but as time progressed I became increasingly conscious of its performance and I set about the task of optimising. After a number of rewrites I got to the point where I was happy with the general structure:
@@ -28,7 +28,7 @@ Why was ddh only getting through something like 3.8 files per second when there 
 # Files tend to cluster
 Upon further analysis it became clear that the reason for the poor performance was that files (my files at least) tend to cluster in file sizes. In fact here's a graph of the file sizes present in my dataset
 
-![Files clustering](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2018-04-04-how-many-bytes-does-it-take/FileSizes.png)
+![Files clustering](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2018-04-02-how-many-bytes-does-it-take/FileSizes.png)
 
 Interesting to know and really quite intuitive as well. So, there's a simple solution here. Hash a small part of each file before comparing full file lengths. This changes the program logic from was was mentioned above to
 ```
@@ -49,7 +49,7 @@ or put another way
 
 Ignoring the undefined term *most* it's obvious that files which are duplicates will require full reads, but those are the degenerate cases which we ignore. The files we care about are the files which are different, but which may seem similar. File headers are bound to be similar, but then not all files have headers and some that have headers have potentially unique data in them. So, this is an easy enough question to answer with a little code, at least for a single dataset. Lets just hash all my files at one, two, three, etc... bytes and find out where we hit diminishing returns. Using my spinning disc dataset
 
-![The gif](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2018-04-04-how-many-bytes-does-it-take/hashbuckets.gif)
+![The gif](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2018-04-02-how-many-bytes-does-it-take/hashbuckets.gif)
 
 Here we can see a massive drop off of potential duplicates at 13 bytes which makes my initial guess of 128KB look impressively wrong. When you think about it there are 8 bits to the byte and thus 2^104 possible 13 byte patters. It's actually pretty shocking how many files were so similar in the 12 byte (2^96) space, but then it seems that files tend to cluster. It turns out that you can make a pretty good hash out of as few as 13 bytes.
 
