@@ -16,12 +16,12 @@ This worked fine for some basic tests on my main main system and after the perfo
 # Job not actually done
 Working with solid state storage is great, but testing on solid state storage alone can hide performance issues. To avoid this testing on continued with a collection of files stored on a spinning disk drive and lead to instant disappointment with roughly 1h 30m of runtime. The full output was as follows
 ```
-21262 Total files (with duplicates): 687907721 Kilobytes
-20334 Total files (without duplicates): 683634507 Kilobytes
-20168 Single instance files: 679372542 Kilobytes
+13262 Total files (with duplicates): 687907721 Kilobytes
+12334 Total files (without duplicates): 683634507 Kilobytes
+12168 Single instance files: 679372542 Kilobytes
 166 Shared instance files: 4261965 Kilobytes (1094 instances)
 ```
-The dataset was just under 700GB with about 21,000 files which gives some rough performance data showing about 132 Megabytes per second or the more interesting metric of about 3.8 files per second.
+The dataset was just under 700GB with about 13,000 files which gives some rough performance data showing about 132 Megabytes per second or the more interesting metric of about 3.8 files per second.
 
 Why was ddh only getting through something like 3.8 files per second when there were only 1094 duplicates?
 
