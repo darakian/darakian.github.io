@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How many bytes does it take to make a good hash? Part 2."
+title:  "How many bytes does it take to make a good hash? Part Two."
 date:   2018-05-12 20:00:00 -1000
 ---
 # Following up with a larger dataset
