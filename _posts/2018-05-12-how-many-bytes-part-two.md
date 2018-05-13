@@ -39,9 +39,7 @@ This was a quick update, but it's good to see that even with a large dataset 4KB
 
 
 # Want to test your own dataset?
-It's clear that the point of diminishing returns will be unique for every dataset and if you'd like to see what your own dataset looks like you can find the code I use here
-
-[file_compare](https://github.com/darakian/rustExperiments/tree/master/file_compare)
+It's clear that the point of diminishing returns will be unique for every dataset and if you'd like to see what your own dataset looks like you can find the code I use here [file_compare](https://github.com/darakian/rustExperiments/tree/master/file_compare).
 
 This code does require that you have bash and gnuplot installed and the code doesn't auto generate everything. Some manual inspection is required, but if you're interested in going beyond what is done automatically feel free to reach out to me. If you've read both of my hashing posts you may have noticed that I skipped an image in this one. There's a very good reason for that; the machine used for this post had 16GB of ram and making a gif out of all the individual plots resulted in a 33MB gif or a crashed gnuplot when flags for quality reduction were applied.
 
