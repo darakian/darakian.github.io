@@ -16,13 +16,18 @@ First thing's first; lets look at the dataset to get familiar. The stats from dd
 ```
 Graphing file sizes we have
 ![Files clustering](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2018-05-12-how-many-bytes-part2/sizes.png)
-We can see files clustering as before with a much higher density. A higher resolution image is available [here](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2018-05-12-how-many-bytes-part2/sizes2.png) for those interested.
+
+We can see files clustering as before with a much higher density. A higher resolution image is available
+
+[here](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2018-05-12-how-many-bytes-part2/sizes2.png) for those interested.
 
 # How to make a good hash with changing ingredients
 We still have the same leading problem statement
+
 > How few bytes can we read and still differentiate *most* files?
 
 But we're not going to focus on that question in this post. In the last post we found 20 bytes to be sufficient, but with the shift in dataset a more useful question to investigate might be
+
 > Is 4KB sufficient to different *most* files in *most* datasets?
 
 Again we avoid defining the term *most* and work with an intuition for that term. The goal is to be confident in the choice of a 4KB first stage hash as 4KB maps well to modern storage systems. Proceeding as before we observe the following.
@@ -37,7 +42,9 @@ This was a quick update, but it's good to see that even with a large dataset 4KB
 
 # Want to test your own dataset?
 It's clear that the point of diminishing returns will be unique for every dataset and if you'd like to see what your own dataset looks like you can find the code I use here
+
 [file_compare](https://github.com/darakian/rustExperiments/tree/master/file_compare)
+
 This code does require that you have bash and gnuplot installed and the code doesn't auto generate everything. Some manual inspection is required, but if you're interested in going beyond what is done automatically feel free to reach out to me. If you've read both of my hashing posts you may have noticed that I skipped an image in this one. There's a very good reason for that; the machine used for this post had 16GB of ram and making a gif out of all the individual plots resulted in a 33MB gif or a crashed gnuplot when flags for quality reduction were applied.
 
 
