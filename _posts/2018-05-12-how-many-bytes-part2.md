@@ -32,7 +32,7 @@ Again we avoid defining the term *most* and work with an intuition for that term
 Again we see a point of diminishing returns, but for this dataset the point seems to be around 600 bytes. Perhaps this is unsurprising as more files increases the odds of any two files being similar for n bytes and indeed that is exactly what is shown here.
 
 # Satisfaction
-This was a quick update, but it's good to see that even with a large dataset 4KB provides a very good initial result with 220,868 unique hashes for 290,406 files of which 229,231 are unique. The first pass hash gives us 96% coverage of the unique files in the dataset. Considering the the simplicity of the solution 96% differentiation is just amazing.
+This was a quick update, but it's good to see that even with a large dataset 4KB provides a very good initial result. At the 600 byte mark there are 192,784 unique hashes out of 290,406 files of which 229,231 are unique. That's 84% differentiation. Again 4KB is the smallest read we can do on modern storage and at 4KB we have 220,868 unique hashes. The 4KB first pass hash gives us 96% coverage of the unique files in the dataset. Considering the the simplicity of the solution 96% differentiation is just amazing.
 
 
 # Want to test your own dataset?
