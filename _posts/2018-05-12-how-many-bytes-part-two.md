@@ -17,9 +17,7 @@ First thing's first; lets look at the dataset to get familiar. The stats from dd
 Graphing file sizes we have
 ![Files clustering](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2018-05-12-how-many-bytes-part2/sizes.png)
 
-We can see files clustering as before with a much higher density. A higher resolution image is available
-
-[here](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2018-05-12-how-many-bytes-part2/sizes2.png) for those interested.
+We can see files clustering as before with a much higher density. A higher resolution image is available [here](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2018-05-12-how-many-bytes-part2/sizes2.png) for those interested.
 
 # How to make a good hash with changing ingredients
 We still have the same leading problem statement
