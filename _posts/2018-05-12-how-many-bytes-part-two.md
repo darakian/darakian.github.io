@@ -26,7 +26,7 @@ We still have the same leading problem statement
 
 But we're not going to focus on that question in this post. In the last post we found 20 bytes to be sufficient, but with the shift in dataset a more useful question to investigate might be
 
-> Is 4KB sufficient to different *most* files in *most* datasets?
+> Is 4KB sufficient to differentiate *most* files in *most* datasets?
 
 Again we avoid defining the term *most* and work with an intuition for that term. The goal is to be confident in the choice of a 4KB first stage hash as 4KB maps well to modern storage systems. Proceeding as before we observe the following.
 
