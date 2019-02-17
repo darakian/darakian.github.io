@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "On java's secure random"
-date:   2019-2-16 18:00:00 -0700
+date:   2019-02-16 18:00:00 -0700
 ---
 # The cli
 To set the stage for this post I need to be briefly boring; I work at a company which I will call Datadyne and we have a command line program which we usually call `the cli`. This program is one option with which our customers can interface with our platform and in particular it can be used to upload files. However, some customers have reported that the cli would just freeze during upload. No crashing. No error messages. Nothing, but a hung terminal.
