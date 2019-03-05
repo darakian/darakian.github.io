@@ -20,7 +20,7 @@ It would have been easy to blame the linux devs or over zealous cryptography res
 In truth `/dev/random` has been developed over many years by some of the best talent around and it is an exquisitely well made and highly performant device for what it is.
 
 # Use less entropy
-So probably our code is clearly a glutton of entropy and is putting far more demand on the system random than is reasonable. Doing a quick code search I came to some of our upload code which had one main loop
+So probably our code is a glutton of entropy and is putting far more demand on the system random than is reasonable. Doing a quick code search I came to some of our upload code which had one main loop
 ```
 for (file : list){
   datfile = encrypt_and_pack(file)
