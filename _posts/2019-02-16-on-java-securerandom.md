@@ -14,9 +14,6 @@ For the sake of brevity I'll skip the investigation, but it turns out that on so
 
 # Old prejudices die hard
 It would have been easy to blame the linux devs or over zealous cryptography researchers or the lizard people or whoever for making `random` block and chalk up the poor performance of our code to them. It's easy to blame others and if you've spent any time in low entropy environments like Corporate America it's certainly common, but it's wrong. Do a quick search for `slow /dev/random` you'll find a litany of complaints and the more you read the easier you'll find it to be seduced by the implicit mantra that `/dev/random` is a poorly made device.
-
-![random is wrong](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2019-2-16-on-java-securerandom/random_is_wrong.png)
-
 In truth `/dev/random` has been developed over many years by some of the best talent around and it is an exquisitely well made and highly performant device for what it is.
 
 # Use less entropy
