@@ -42,7 +42,6 @@ hax
 The list `var` has persisted across calls to the function and all subsequent calls to `func` will now travel down the `if 'foo' in var` code path. This gets even worse if we override the list variable
 ```
 >>> func(var=[], input='Some')
->>> func(input='Some')
 >>>
 >>> func(input='Some')
 hax
