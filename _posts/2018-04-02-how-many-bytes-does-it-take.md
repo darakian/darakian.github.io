@@ -11,7 +11,7 @@ Over the past few months I've written a file duplicate finder [ddh](https://gith
 3. Hash files for which there is another of the same length
 4. Sort by hash and display results as requested
 ```
-This worked fine for some basic tests on my main main system and after the performance work I had full system scans going in a few seconds. Brilliant! I've done a test and received a glowing result. Job done.
+This worked fine for some basic tests on my main system and after the performance work I had full system scans going in a few seconds. Brilliant! I've done a test and received a glowing result. Job done.
 
 # Job not actually done
 Working with solid state storage is great, but testing on solid state storage alone can hide performance issues. To avoid this testing on continued with a collection of files stored on a spinning disk drive and lead to instant disappointment with roughly 1h 30m of runtime. The full output was as follows
