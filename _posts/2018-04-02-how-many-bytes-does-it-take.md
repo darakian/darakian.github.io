@@ -14,7 +14,7 @@ Over the past few months I've written a file duplicate finder [ddh](https://gith
 This worked fine for some basic tests on my main system and after the performance work I had full system scans going in a few seconds. Brilliant! I've done a test and received a glowing result. Job done.
 
 # Job not actually done
-Working with solid state storage is great, but testing on solid state storage alone can hide performance issues. To avoid this testing on continued with a collection of files stored on a spinning disk drive and lead to instant disappointment with roughly 1h 30m of runtime. The full output was as follows
+Working with solid state storage is great, but testing on solid state storage alone can hide performance issues. In an effort to expose any unseen performance issues I continued testing with a collection of files stored on a spinning disk drive and I was lead to instant disappointment. In my first test I saw a runtime of 1h 30m. The full output was as follows
 ```
 13262 Total files (with duplicates): 687907721 Kilobytes
 12334 Total files (without duplicates): 683634507 Kilobytes
