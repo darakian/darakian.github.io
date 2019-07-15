@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "On java's secure random"
+title:  "An odd feature of java's secure random"
 date:   2019-02-16 18:00:00 -0700
 ---
 # The cli
