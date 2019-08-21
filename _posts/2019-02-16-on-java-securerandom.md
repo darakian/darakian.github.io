@@ -29,9 +29,9 @@ The encrypt_and_pack function was making a new random key for each file, encrypt
 public final class EncryptingThingsHere {
     ...
     public static byte[] getSomeBytes(int n) {
-      SecureRandom randy = new SecureRandom();
+      SecureRandom rng = new SecureRandom();
       byte[] themBytes = new byte[n];
-      randy.nextBytes(themBytes);
+      rng.nextBytes(themBytes);
       return themBytes;
     }
     ...
@@ -49,11 +49,11 @@ That is, if a seed has not be explicitly set then the first use of the object wi
 ex.
 ```
 public final class EncryptingThingsHere {
-    final static SecureRandom extraRandy = new SecureRandom();
+    final static SecureRandom rng = new SecureRandom();
 
     public static byte[] getSomeBytes(int n) {
       byte[] themBytes = new byte[n];
-      extraRandy.nextBytes(themBytes);
+      rng.nextBytes(themBytes);
       return themBytes;
     }
     ...
