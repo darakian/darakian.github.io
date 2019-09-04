@@ -69,3 +69,32 @@ To close, I just want to draw attention back to those [java docs](https://docs.o
 ```
 Thanks for reading
 ```
+
+
+## Example code (Added 2019-09-04)
+After related with a colleague I made a simple example loop to show off the effects of the `SecureRandom()` constructor and figured I should post it here. This code spins in a loop and drains entropy from a linux system configured to use `/dev/random`.  
+```
+import java.security.SecureRandom;
+import java.nio.file.*;
+import java.util.*;
+import java.nio.charset.StandardCharsets;
+
+public class entropy_test {
+   public static void main(String[] args) {
+      List<String> lines = new ArrayList<>();
+      byte[] result = new byte[4];
+      while (true){
+        result = new byte[4];
+        try {
+            Path file_path = Paths.get("/proc/sys/kernel/random/entropy_avail");
+            lines = Files.readAllLines(file_path, StandardCharsets.UTF_8);
+        } catch (Exception e) {}
+        for (String s : lines){
+            System.out.println(s);
+        }
+        SecureRandom sr = new SecureRandom();
+        sr.nextBytes(result);
+      }
+   }
+}
+```
