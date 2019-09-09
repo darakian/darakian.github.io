@@ -83,15 +83,19 @@ public class entropy_test {
    public static void main(String[] args) {
       List<String> lines = new ArrayList<>();
       byte[] result = new byte[4];
+      short overflowCounter = 0;
       while (true){
+        overflowCounter +=1;
         result = new byte[4];
-        try {
+        if (overflowCounter==0){
+          try {
             Path file_path = Paths.get("/proc/sys/kernel/random/entropy_avail");
             lines = Files.readAllLines(file_path, StandardCharsets.UTF_8);
-        } catch (Exception e) {}
-        for (String s : lines){
+          } catch (Exception e) {}
+          for (String s : lines){
             System.out.println(s);
-        }
+          }
+        } 
         SecureRandom sr = new SecureRandom();
         sr.nextBytes(result);
       }
