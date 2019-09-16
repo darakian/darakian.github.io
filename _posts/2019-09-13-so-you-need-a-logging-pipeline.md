@@ -25,7 +25,7 @@ While it's nice to avoid if possible you may find yourself in the same unenviabl
 This will be highly language and framework dependent, but as long as you have a logging subsystem you have the ability to make ship logs out of your application. Python in particular has a very nice logging framework where custom log handlers can be made and registered to provide custom output options. [Python logging handlers](https://docs.python.org/3.7/library/logging.handlers.html). A simple example of a mozdef compatible logging handler can be found below.
 
 # Mozilla's brilliant Mozdef
-Mozdef is essentially a [ELK stack](https://www.elastic.co/what-is/elk-stack) with an analysis framework added on. This MELK stack provides all the normal elastic co goodness with a framework to schedule and run arbitrary queries on your log data. That and it's dead simple to get going. Assuming you have docker and docker-compose installed, a basic setup can be started with
+Mozdef is essentially a [ELK stack](https://www.elastic.co/what-is/elk-stack) with an analysis framework added on. This "MELK" stack provides all the normal elastic co goodness with a framework to schedule and run arbitrary queries on your log data. That and it's dead simple to get going. Assuming you have docker and docker-compose installed, a basic setup can be started with
 ```
 git clone https://github.com/mozilla/MozDef.git
 cd MozDef
