@@ -28,6 +28,10 @@ CT = E8D50453F84B575412327D7C0302D8D3
 The fields are the `Count` which indexes the test vector, the `Key` and `Nonce` which are constant for all vectors, the plaintext or `PT`, the associated data or `AD` and the ciphertext or `CT`. In this case the equality looks something like `gimli(PT, AD, nonce, key) = CT`.
 The total count was 1089. Given the functions that I had made I wanted each of these available as a vector of `u8` values in my rust code.
 
+The source of these test vectors can be seen in the path `gimli/Implementations/crypto_aead/gimli24v1/LWC_AEAD_KAT_256_128.txt` of the archive
+
+https://csrc.nist.gov/CSRC/media/Projects/lightweight-cryptography/documents/round-2/submissions-rnd2/gimli.zip
+
 ## The goal
 What I need to end up with is a collection of lines of the form
 ```
