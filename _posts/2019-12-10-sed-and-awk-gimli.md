@@ -41,7 +41,7 @@ which is directly consumable and allows for a simple test loop
 ```
 for vec in cipher_vectors.iter(){
     assert_eq!(vec.2, gimli_aead_encrypt(&vec.0, &vec.1, &nonce, &key));
-    assert_eq!(vec.0, gimli_aead_decrypt(&vec.2, &vec.1, &nonce, &key).expect("Error in test decryption"));
+    assert_eq!(vec.0, gimli_aead_decrypt(&vec.2, &vec.1, &nonce, &key));
 }
 ```
 
