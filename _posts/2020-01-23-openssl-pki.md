@@ -39,8 +39,8 @@ BgUrgQQAIg==
 ```
 If we dig further we can read the private key information out as well, but I'll leave that to the reader. Next we want to create a certificate which embeds the root private key and which is signed by the root private key. This is called a self signed cert and can be created with
 ```
-openssl req -new -key root.pem -out root.csr -subj "/C=US/ST=YourState/L=YourCity/O=YourOrganization/OU=YourUnit/CN=ThisIsMyRoot"
-openssl x509 -sha256 -in root.csr -out root.crt -req -signkey root.pem -days 30
+❯❯❯ openssl req -new -key root.pem -out root.csr -subj "/C=US/ST=YourState/L=YourCity/O=YourOrganization/OU=YourUnit/CN=ThisIsMyRoot"
+❯❯❯ openssl x509 -sha256 -in root.csr -out root.crt -req -signkey root.pem -days 30
 ```
 You should see two new files in your directory; `root.csr` and `root.crt`. You can read your signing request with `openssl req -in root.csr -noout -text`
  which will dump out something like
