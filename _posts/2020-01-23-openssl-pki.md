@@ -202,7 +202,7 @@ leaf.crt: OK
 ```
 
 # Wrap up
-In researching and writing this I came across a lot of conflicting information, outdated recommendations and some downright wrong information. In particular many posts mention the bundling of your root and intermediate certs into a single file and verifying the leaf as `openssl verify -CAfile bundle.crt leaf.crt`, however this will not not verify that that trust chain checks out and in fact if you omit the `CA:true` extension on the intermediate cert `openssl verify -CAfile bundle.crt leaf.crt` will pass while `openssl verify -CAfile root.crt -untrusted inter.crt leaf.crt` will fail.
+In researching and writing this I came across a lot of conflicting information, outdated recommendations and some downright wrong information. In particular many posts mention the bundling of your root and intermediate certs into a single file and verifying the leaf as `openssl verify -CAfile bundle.crt leaf.crt`, however this will not not verify that that trust chain checks out and in fact if you omit the `CA:true` extension on the intermediate cert `openssl verify -CAfile bundle.crt leaf.crt` will pass while `openssl verify -CAfile root.crt -untrusted inter.crt leaf.crt` will fail. I've glossed over a lot here, but I hope you found this post useful.
 
 ```
 Thanks for reading
