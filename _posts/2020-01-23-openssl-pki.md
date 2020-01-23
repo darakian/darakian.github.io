@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Exploring openssl by creating a toy PKI"
+title:  "Exploring x509 by creating a toy PKI"
 date:   2020-01-23 18:00:00 -0700
 ---
 # PKI and x509
