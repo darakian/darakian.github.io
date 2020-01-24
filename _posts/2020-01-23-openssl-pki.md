@@ -117,7 +117,7 @@ Now create our intermediate cert with
 ```
 Lets recall that we created our root cert with the command
 ```
-openssl x509 -sha256 -in root.csr -out root.crt -req -signkey root.pem -days 30
+❯❯❯ openssl x509 -sha256 -in root.csr -out root.crt -req -signkey root.pem -days 30
 ```
 and we see a few differences. First we're passing the flags `-CA root.crt` and `-CAkey root.pem` which define the issuing CA and the signing key respectively. This is straight forward and this format will be used for anything downstream of the root cert. Second we see the flag `-CAcreateserial` which will create the serial number file if one is not provided and finally we see `-extfile ext.txt` which passes our newly created extensions file in so that we can get a certificate for a CA.  
 
