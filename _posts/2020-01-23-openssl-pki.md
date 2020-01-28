@@ -110,7 +110,7 @@ Before we create the intermediate CA cert we need to discuss x509 v3 extensions.
 ```
 ❯❯❯ echo basicConstraints=critical,CA:true,pathlen:0 > ext.txt
 ```
-three things are happening here. First we're setting the basicConstraints extension to be critical so that it should not be ignored, second we're we define that we want a cert which is usage as a CA and can sign other certs and third we set the path length to zero which makes it so that no children of this certificate can be a CA themselves.
+three things are happening here. First we're setting the basicConstraints extension to be critical so that it should not be ignored, second we define that we want a cert which is usage as a CA and can sign other certs and third we set the path length to zero which makes it so that no children of this certificate can be a CA themselves.
 Now create our intermediate cert with
 ```
 ❯❯❯ openssl x509 -req -sha256 -days 30 -in inter.csr -CA root.crt -CAkey root.pem -CAcreateserial -extfile ext.txt -out inter.crt
