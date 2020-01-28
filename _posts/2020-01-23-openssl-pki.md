@@ -28,7 +28,7 @@ First we need to generate our root keys which we can do with
 ```
 ❯❯❯ openssl ecparam -out root.pem -name secp384r1 -genkey
 ```
-This will unsurprisingly create a file called `root.pem` which will contain a public-private key pair. In this example we use the `secp384r1` curve as it has a high security margin (in early 2020) and is widely compatible. If you want to explore other options give `openssl ecparam -list_curves` a look for supported curves. Anyway, reading this file you'll see something like
+This will unsurprisingly create a file called `root.pem` which will contain a private key. In this example we use the `secp384r1` curve as it has a high security margin (in early 2020) and is widely compatible. If you want to explore other options give `openssl ecparam -list_curves` a look for supported curves. Anyway, reading this file you'll see something like
 ```
 ❯❯❯ openssl ecparam -in root.pem -text
 ASN1 OID: secp384r1
