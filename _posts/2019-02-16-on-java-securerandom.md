@@ -36,7 +36,7 @@ public final class EncryptingThingsHere {
     }
     ...
 ```
-This looks innocuous enough, but what is the `SecureRandom` object? As it turns out a `SecureRandom` is a thread safe, but fully independent random number generator. If you read the [javadoc material](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html) alone you'd be forgiven in thinking `so what, it's all just randomness coming from the same place`, however upon inspecting the source code to the java 7 secure random implementation [here](https://hg.openjdk.java.net/jdk7/jdk7/jdk/file/tip/src/share/classes/java/security/SecureRandom.java) I found the following.
+This looks innocuous enough, but what is the `SecureRandom` object? A `SecureRandom` is a thread safe, but fully independent random number generator to be used when you care about your numbers being unguessable. If you read the [javadoc material](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html) alone you'd be forgiven in thinking that all `SecureRandom` objects share a JVM provided entropy pool. Certainly the docs never imply that there is any uniqueness to difference instances. However if you inspect the source code for the `SecureRandom` implementation [here](https://hg.openjdk.java.net/jdk7/jdk7/jdk/file/tip/src/share/classes/java/security/SecureRandom.java#l121) you'll find the following comment.
 ```
 The returned SecureRandom object has not been seeded. To seed the
 returned object, call the setSeed method.
