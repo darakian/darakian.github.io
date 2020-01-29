@@ -45,7 +45,7 @@ nextBytes will force the SecureRandom object to seed itself.
 This self-seeding will not occur if setSeed was
 previously called.
 ```
-That is, if a seed has not be explicitly set then the first use of the object will call for seeding. Look back at the code above. We're creating a new object and thus a new seed every time we call `getSomeBytes`. Horribly wasteful, but thankfully very easy to fix. In each of the offending functions a single static `SecureRandom` object was set and all function calls would forward to that.  
+That is, if a seed has not be explicitly set then the first use of the object will call for seeding. Look back at the code above. We're creating a new object and thus a new seed every time we call `getSomeBytes`. Horribly wasteful, but thankfully very easy to fix. In each of the offending functions we can create a single static `SecureRandom` object and just use that.  
 ex.
 ```
 public final class EncryptingThingsHere {
@@ -58,11 +58,11 @@ public final class EncryptingThingsHere {
     }
     ...
 ```
-The result is captured quite nicely in the following graph.
+The results are pretty dramatic and are captured quite nicely in the following graph.
 
 ![Some Entropy](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2019-2-16-on-java-securerandom/avail_entropy.png)
 
-The data for this graph came from checking `/proc/sys/kernel/random/entropy_avail` every `0.1s` while the relevant code was running and then killed at two minutes. In purple you see the available entropy when running the old code and it's just dips with one precipitously large dip. Given a longer runtime or a system with less activity those dips could hit zero and simply halt the system. In green the new code which has the same dips early on, but is otherwise much more well behaved.
+You can see the prior approach in purple and the new `single RNG` approach in green. The data for this graph came from checking `/proc/sys/kernel/random/entropy_avail` every `0.1s` while the relevant code was running and then killed at two minutes. In purple you see the available entropy when running the old code and it's just dips with one precipitously large dip. Given a longer runtime or a system with less activity those dips could hit zero and simply halt the system. In green the new code which has the same dips early on, but is otherwise much more well behaved.
 
 # Wrap up
 To close, I just want to draw attention back to those [java docs](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html). No where in there do they mention that the object constructor can be expensive. They discuss that the randomness source can block, but never that the act of creating a new `SecureRandom` will necessitate drawing on system entropy, nor what that can entail.
