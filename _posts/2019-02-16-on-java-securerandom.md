@@ -45,7 +45,7 @@ nextBytes will force the SecureRandom object to seed itself.
 This self-seeding will not occur if setSeed was
 previously called.
 ```
-That is, if a seed has not be explicitly set then the first use of the object will call for seeding. Look back at the code above. We're creating a new object and thus a new seed every time we call `getSomeBytes`. Horribly wasteful, but thankfully very easy to fix. In each of the offending functions we can create a single static `SecureRandom` object and just use that.  
+That is, if a seed has not be explicitly set, then the first use of the object will call for seeding. Look back at the code above. We're creating a new object and thus a new seed every time we call `getSomeBytes`. Horribly wasteful, but thankfully very easy to fix. In each of the offending functions we can create a single static `SecureRandom` object and just use that.  
 ex.
 ```
 public final class EncryptingThingsHere {
