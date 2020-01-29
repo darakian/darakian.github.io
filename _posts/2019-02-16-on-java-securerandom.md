@@ -72,7 +72,7 @@ Thanks for reading
 
 
 ## Example code (Added 2019-09-04)
-After related with a colleague I made a simple example loop to show off the effects of the `SecureRandom()` constructor and figured I should post it here. This code spins in a loop and drains entropy from a linux system configured to use `/dev/random`.  
+After a related discussion with a colleague I made a simple example loop to show off the effects of the `SecureRandom()` constructor and figured I should post it here. This code spins in a loop and drains entropy from a linux system configured to use `/dev/random`.  
 ```
 import java.security.SecureRandom;
 import java.nio.file.*;
@@ -95,7 +95,7 @@ public class entropy_test {
           for (String s : lines){
             System.out.println(s);
           }
-        } 
+        }
         SecureRandom sr = new SecureRandom();
         sr.nextBytes(result);
       }
