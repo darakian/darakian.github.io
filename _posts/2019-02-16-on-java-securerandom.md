@@ -14,10 +14,10 @@ For the sake of brevity I'll skip the investigation, but it turns out that on so
 
 # Old prejudices die hard
 It would have been easy to blame the linux devs or over zealous cryptography researchers or the lizard people or whoever for making `random` block and chalk up the poor performance of our code to them. It's easy to blame others and if you've spent any time in low entropy environments like Corporate America it's certainly common, but it's wrong. Do a quick search for `slow /dev/random` you'll find a litany of complaints and the more you read the easier you'll find it to be seduced by the implicit mantra that `/dev/random` is a poorly made device.
-In truth `/dev/random` has been developed over many years by some of the best talent around and it is an exquisitely well made and highly performant device for what it is.
+In truth `/dev/random` has been developed over many years by some of the best talent around and it is an exquisitely well made and highly performant device for what it is, however the design of `/dev/random` leads it to block in low entropy, high drain scenarios. This may change in the future, but today this is just a fact of life.
 
 # Use less entropy
-So probably our code is a glutton of entropy and is putting far more demand on the system random than is reasonable. Doing a quick code search I came to some of our upload code which had one main loop
+So, how is this a unique problem? We're running on fairly standard linux distros along side other java code which must have to deal with the same scarcity. Why is our code not working properly? Probably our code is a glutton of entropy and is putting far more demand on the system random than is reasonable. Doing a quick code search I came to some of our upload code which had one main loop
 ```
 for (file : list){
   datfile = encrypt_and_pack(file)
