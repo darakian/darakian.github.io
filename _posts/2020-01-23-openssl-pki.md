@@ -159,12 +159,13 @@ inter.crt: OK
 ## And finally the leafs
 Now we can create the leaf certs in this setup. Begin as before with a key and signing request
 ```
-openssl ecparam -out leaf.pem -name secp384r1 -genkey
-openssl req -new -key leaf.pem -out leaf.csr -subj "/C=US/ST=YourState/L=YourCity/O=YourOrganization/OU=YourUnit/CN=ThisIsMyLeaf"
+❯❯❯ openssl ecparam -out leaf.pem -name secp384r1 -genkey
+❯❯❯ openssl req -new -key leaf.pem -out leaf.csr -subj "/C=US/ST=YourState/L=YourCity/O=YourOrganization/OU=YourUnit/CN=ThisIsMyLeaf"
+❯❯❯ echo basicConstraints=critical,CA:false > leaf-ext.txt
 ```
 For the leafs we don't care about any extensions for the leaf and so we can create a simple cert with
 ```
-openssl x509 -req -sha256 -days 30 -in leaf.csr -CA inter.crt -CAkey inter.pem -CAcreateserial -out leaf.crt
+❯❯❯ openssl x509 -req -sha256 -days 30 -in leaf.csr -CA inter.crt -CAkey inter.pem -CAcreateserial -extfile leaf-ext.txt -out leaf.crt
 ```
 read it with
 ```
