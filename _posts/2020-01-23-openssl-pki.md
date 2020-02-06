@@ -186,6 +186,9 @@ Certificate:
                     04:60:...
                 ASN1 OID: secp384r1
                 NIST CURVE: P-384
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:FALSE
     Signature Algorithm: ecdsa-with-SHA256
          30:64:...
 -----BEGIN CERTIFICATE-----
