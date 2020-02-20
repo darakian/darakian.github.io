@@ -14,10 +14,10 @@ For the sake of brevity I'll skip the investigation, but it turns out that on so
 
 # Old prejudices die hard
 It would have been easy to blame the linux devs or over zealous cryptography researchers or the lizard people or whoever for making `random` block and chalk up the poor performance of our code to them. It's easy to blame others and if you've spent any time in low entropy environments like Corporate America it's certainly common, but it's wrong. Do a quick search for `slow /dev/random` you'll find a litany of complaints and the more you read the easier you'll find it to be seduced by the implicit mantra that `/dev/random` is a poorly made device.
-In truth `/dev/random` has been developed over many years by some of the best talent around and it is an exquisitely well made and highly performant device for what it is.
+In truth `/dev/random` has been developed over many years by some of the best talent around and it is an exquisitely well made and highly performant device for what it is, however the design of `/dev/random` leads it to block in low entropy, high drain scenarios. This may change in the future, but today this is just a fact of life.
 
 # Use less entropy
-So probably our code is a glutton of entropy and is putting far more demand on the system random than is reasonable. Doing a quick code search I came to some of our upload code which had one main loop
+So, how is this a unique problem? We're running on fairly standard linux distros along side other java code which must have to deal with the same scarcity. Why is our code not working properly? Probably our code is a glutton of entropy and is putting far more demand on the system random than is reasonable. Doing a quick code search I came to some of our upload code which had one main loop
 ```
 for (file : list){
   datfile = encrypt_and_pack(file)
@@ -36,7 +36,7 @@ public final class EncryptingThingsHere {
     }
     ...
 ```
-This looks innocuous enough, but what is the `SecureRandom` object? As it turns out a `SecureRandom` is a thread safe, but fully independent random number generator. If you read the [javadoc material](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html) alone you'd be forgiven in thinking `so what, it's all just randomness coming from the same place`, however upon inspecting the source code to the java 7 secure random implementation [here](https://hg.openjdk.java.net/jdk7/jdk7/jdk/file/tip/src/share/classes/java/security/SecureRandom.java) I found the following.
+This looks innocuous enough, but what is the `SecureRandom` object? A `SecureRandom` is a thread safe, but fully independent random number generator to be used when you care about your numbers being unguessable. If you read the [javadoc material](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html) alone you'd be forgiven in thinking that all `SecureRandom` objects share a JVM provided entropy pool. Certainly the docs never imply that there is any uniqueness to different instances. However if you inspect the source code for the `SecureRandom` implementation [here](https://hg.openjdk.java.net/jdk7/jdk7/jdk/file/tip/src/share/classes/java/security/SecureRandom.java#l121) you'll find the following comment.
 ```
 The returned SecureRandom object has not been seeded. To seed the
 returned object, call the setSeed method.
@@ -45,7 +45,7 @@ nextBytes will force the SecureRandom object to seed itself.
 This self-seeding will not occur if setSeed was
 previously called.
 ```
-That is, if a seed has not be explicitly set then the first use of the object will call for seeding. Look back at the code above. We're creating a new object and thus a new seed every time we call `getSomeBytes`. Horribly wasteful, but thankfully very easy to fix. In each of the offending functions a single static `SecureRandom` object was set and all function calls would forward to that.  
+That is, if a seed has not be explicitly set, then the first use of the object will call for seeding. Look back at the code above. We're creating a new object and thus a new seed every time we call `getSomeBytes`. Horribly wasteful, but thankfully very easy to fix. In each of the offending functions we can create a single static `SecureRandom` object and just use that.  
 ex.
 ```
 public final class EncryptingThingsHere {
@@ -58,11 +58,11 @@ public final class EncryptingThingsHere {
     }
     ...
 ```
-The result is captured quite nicely in the following graph.
+The results are pretty dramatic and are captured quite nicely in the following graph.
 
 ![Some Entropy](https://raw.githubusercontent.com/darakian/darakian.github.io/master/_images/2019-2-16-on-java-securerandom/avail_entropy.png)
 
-The data for this graph came from checking `/proc/sys/kernel/random/entropy_avail` every `0.1s` while the relevant code was running and then killed at two minutes. In purple you see the available entropy when running the old code and it's just dips with one precipitously large dip. Given a longer runtime or a system with less activity those dips could hit zero and simply halt the system. In green the new code which has the same dips early on, but is otherwise much more well behaved.
+You can see the prior approach in purple and the new `single RNG` approach in green. The data for this graph came from checking `/proc/sys/kernel/random/entropy_avail` every `0.1s` while the relevant code was running and then killed at two minutes. In the prior approach you see the available entropy when running the old code and it's just dips with one precipitously large dip. Given a longer runtime or a system with less activity those dips could hit zero and simply halt the system. In green the new code which has the same dips early on, but is otherwise much more well behaved.
 
 # Wrap up
 To close, I just want to draw attention back to those [java docs](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html). No where in there do they mention that the object constructor can be expensive. They discuss that the randomness source can block, but never that the act of creating a new `SecureRandom` will necessitate drawing on system entropy, nor what that can entail.
@@ -72,7 +72,7 @@ Thanks for reading
 
 
 ## Example code (Added 2019-09-04)
-After related with a colleague I made a simple example loop to show off the effects of the `SecureRandom()` constructor and figured I should post it here. This code spins in a loop and drains entropy from a linux system configured to use `/dev/random`.  
+After a related discussion with a colleague I made a simple example loop to show off the effects of the `SecureRandom()` constructor and figured I should post it here. This code spins in a loop and drains entropy from a linux system configured to use `/dev/random`.  
 ```
 import java.security.SecureRandom;
 import java.nio.file.*;
@@ -95,7 +95,7 @@ public class entropy_test {
           for (String s : lines){
             System.out.println(s);
           }
-        } 
+        }
         SecureRandom sr = new SecureRandom();
         sr.nextBytes(result);
       }
