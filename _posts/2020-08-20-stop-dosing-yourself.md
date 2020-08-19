@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Stop DOSing yourself!"
-date:   2020-08-20 18:00:00 -0700
+date:   2020-08-19 15:30:00 -0700
 ---
 # Deep in the woods
 Some time ago a colleague of mine was working on a problem with a license server we run and had asked me for help. He was trying to determine why some license checkouts to the server would be connect and checkout without incident and others would timeout. Some background; we dealt with a good amount of third party, close source code in order to run our customer workflows and licensed software was the norm for most of those workflows. To smooth everything out we stood up and maintained our own internal set of license servers which were basically invisible to our customers and while this made for a nice product to sell it also left us with the support burden of maintaining these code blobs.
