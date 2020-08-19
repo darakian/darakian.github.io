@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Stop DOSing yourself!"
+title:  "Stop DOSing yourself"
 date:   2020-08-19 15:30:00 -0700
 ---
 # Deep in the woods
