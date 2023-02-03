@@ -51,7 +51,7 @@ try:
 except OSError:
     return False
 ```
-Admittedly this is pretty convoluted logic. A tls connection is attempted with no certificate checking and regardless of success or failure we return true. Only in the even that the underlying socket fails do we return false. In particular why do we return true if a TLS connection succeeds? Wouldn't that be a violation of the client certificate model discussed above? Yes it would, however this code is also used on license servers which don't have the client cert restriction.
+Admittedly this is pretty convoluted logic. A tls connection is attempted with no certificate checking and regardless of success or failure we return true. Only in the event that the underlying socket fails do we return false. In particular why do we return true if a TLS connection succeeds? Wouldn't that be a violation of the client certificate model discussed above? Yes it would, however this code is also used on license servers which don't have the client cert restriction.
 
 # Conclusion
 It seems that whoever wrote the original health check code didn't consider that their code may have had side effects on the servers that it was checking. I think the real problem though is that we had no metrics watching checkouts and we couldn't see the effect of the health check. Once this health check was added it became trusted and lead support engineers down false paths. The impact of this bug resulted in over a year of degraded service. So, validate your assumptions. Stop DOSing yourself.
