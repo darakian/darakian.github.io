@@ -23,9 +23,9 @@ So, why make a new version type? Why do we need to add extra complexity of anoth
 
 ### A quick look at semver
 
-Let's take a quick tour of the version type `semver` as it appears in the wild. Recall that a valid semver string contains three number with two dots which separate them eg. a.b.c where a, b and c can only be numbers. a.b is not semver compliant nor is a.b.c.d. There are build and pre-release extensions to semver, but for simplicity lets ignore those for the moment. If you want to double check me there please see:
+Let's take a quick tour of the version type `semver` as it appears in the wild. Recall that a valid semver string contains three number with two dots which separate them eg. a.b.c where a, b and c can only be numbers. a.b is not semver compliant nor is a.b.c.d. There are build and pre-release extensions to semver, but for simplicity lets ignore those for the moment. If you want to double check me there please see:  
 https://semver.org/#is-there-a-suggested-regular-expression-regex-to-check-a-semver-string
-which links out to the fantastic
+which links out to the fantastic  
 https://regex101.com/r/vkijKf/1/
 
 
