@@ -114,7 +114,19 @@ So, let the grand unified theories be discussed later. Let's work on small patch
 [^2]: I pulled the data on June 4th 2025
 [^code]:
 	```
+	import os, json, pprint
+	from os.path import join
 	import semver
+	def find_cves(scan_dir):	
+	file_paths = []
+	for root, dirs, files in os.walk(scan_dir):
+		for f in files:
+			(base, ext) = os.path.splitext(f)
+			if ext == '.json' and 'CVE' in base:
+				full_name = os.path.join(root, f)
+				file_paths.append(full_name)
+	return file_paths
+	
 	def find_semver_strings(cve):
 		good = []
 		bad = []
@@ -147,4 +159,15 @@ So, let the grand unified theories be discussed later. Let's work on small patch
 									except:
 										bad.append(version_range["lessThanOrEqual"])
 		return good, bad
+		
+		all_cves = find_cves('.')
+		for each_cve in all_cves:
+			g, b = find_semver_strings(each_cve)
+			all_good = all_good+g
+			all_bad = all_bad+b
+
+	print(f'Good Semver string count: {len(all_good)}')
+	print(f'Bad Semver string count: {len(all_bad)}')
+	print(f'Good : {len(all_good)/(len(all_good)+len(all_bad))}%')
+	print(f'Bad : {len(all_bad)/(len(all_good)+len(all_bad))}%')
 	```
