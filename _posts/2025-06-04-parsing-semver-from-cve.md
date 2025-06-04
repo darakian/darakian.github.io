@@ -117,6 +117,7 @@ So, let the grand unified theories be discussed later. Let's work on small patch
 	import os, json, pprint
 	from os.path import join
 	import semver
+	
 	def find_cves(scan_dir):	
 		file_paths = []
 		for root, dirs, files in os.walk(scan_dir):
