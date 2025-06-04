@@ -117,7 +117,7 @@ So, let the grand unified theories be discussed later. Let's work on small patch
 	import os, json, pprint
 	from os.path import join
 	import semver
-	
+
 	def find_cves(scan_dir):	
 		file_paths = []
 		for root, dirs, files in os.walk(scan_dir):
@@ -162,6 +162,8 @@ So, let the grand unified theories be discussed later. Let's work on small patch
 		return good, bad
 
 	all_cves = find_cves(path/to/cve/records) # Clone the CVE repo and use that 
+	all_good = []
+	all_bad = []
 	for each_cve in all_cves:
 		g, b = find_semver_strings(each_cve)
 		all_good = all_good+g
