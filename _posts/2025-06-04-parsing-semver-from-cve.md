@@ -111,7 +111,7 @@ So, let the grand unified theories be discussed later. Let's work on small patch
 ----
 
 [^1]: It has a good test suite 👍
-[^2]: I pulled the data May 22nd 2025
+[^2]: I pulled the data on June 4th 2025
 [^code]:
 	```
 	import semver
