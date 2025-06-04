@@ -31,7 +31,7 @@ https://regex101.com/r/vkijKf/1/
 
 So, what do we observe in the published data?
 
-First off we have this
+First a few examples. We have this
 
 ```
 {
