@@ -97,7 +97,7 @@ you need to know what products you use and what products the CVE applies to. The
 
 ## A path forward
 
-If you look at the data captured in the CVE records you can find a number of patterns. Iterating them all isn't really worth it imo. The simple existence of independent patterns sharing a single identifier already tells us what we need to fix. Each publisher is trying to express to their reader `Yo, this thing be broken!` with varying levels metadata and prose to enrich that core statement. The record format seems to have been designed in such a way that it didn't want to be a blocker and that is a good thing. Where I think the format has failed is that it has prevented these publishers from encoding their data in a more useful format when they are able to.
+If you look at the data captured in the CVE records you can find a number of patterns. Iterating them all isn't really worth it imo. The simple existence of independent patterns sharing a single identifier already tells us what we need to know. Each publisher is trying to express to their reader `Yo, this thing be broken!` with varying levels metadata and prose to enrich that core statement. The record format seems to have been designed in such a way that it didn't want to be a blocker. That on its own is fine, but that's what the `Custom` version type is for. The record format has failed to allow publishers to do better than unstructured strings. It needs to allow for better.
 
 The CVE system is going through a lot right now. I don't want to comment much on that since I don't really understand it, but there's a lot of machinery out there in the world built on CVEs  that I care about. That machinery can and should be better leveraged to secure the software we all use but, it would be a shame to have to rebuild all of it. So, I suggest iterative improvement in small, measurable, and concrete ways. I think a workable step is to start allowing for a progressive precision. CNAs are publishing "semver" today. Let's give them a path to improve and perfect that. An approachable attitude could be to say 
 > You want to use something else? Come define it and provide validation. 
@@ -107,6 +107,8 @@ A doable goal can be to provide validated input for the input we already get. We
 So, let the grand ideas be discussed later. Let's work on some small patches.
 
 `Thanks for reading`
+
+----
 
 [^1]: It has a good test suite 👍
 [^2]: I pulled the data May 22nd 2025
