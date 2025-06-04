@@ -8,7 +8,7 @@ date:   2025-06-04 14:00:00 -0700
 
 ## Preliminaries
 
-I've been pushing a schema change to CVE for the last half year or so. I started a conversation about formalizing what a version type means in a CVE record back in November of last year. You can [read up on that here](https://github.com/CVEProject/cve-schema/issues/362). The tl;dr though is that versioning in a CVE record is chaos. From that conversation I spun up a [pull request to formalize semantic versioning](https://github.com/CVEProject/cve-schema/pull/371). That pull request has a lot going on, but the salient points are 
+I've been pushing a schema change to CVE for the last half year or so. I started [a conversation about formalizing what a version type means]((https://github.com/CVEProject/cve-schema/issues/362)) in a CVE record back in November of last year. The tl;dr though is that versioning in a CVE record is chaos. From that conversation I spun up a [pull request to formalize semantic versioning](https://github.com/CVEProject/cve-schema/pull/371). That pull request has a lot going on, but the salient points are 
 1. It introduces a new named version type `semver-2.0.0` so that record authors MUST opt-in to the new behavior.
 2. The new behavior is quite strict and opinionated. This is for the benefit of the record reader.
 3. The test suite is expanded to both demonstrate what correctness looks like and to guard against accidental changes.
