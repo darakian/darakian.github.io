@@ -159,12 +159,12 @@ So, let the grand unified theories be discussed later. Let's work on small patch
 									except:
 										bad.append(version_range["lessThanOrEqual"])
 		return good, bad
-		
-		all_cves = find_cves('.')
-		for each_cve in all_cves:
-			g, b = find_semver_strings(each_cve)
-			all_good = all_good+g
-			all_bad = all_bad+b
+
+	all_cves = find_cves(path/to/cve/records) # Clone the CVE repo and use that 
+	for each_cve in all_cves:
+		g, b = find_semver_strings(each_cve)
+		all_good = all_good+g
+		all_bad = all_bad+b
 
 	print(f'Good Semver string count: {len(all_good)}')
 	print(f'Bad Semver string count: {len(all_bad)}')
