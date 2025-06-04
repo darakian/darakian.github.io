@@ -71,7 +71,7 @@ from HPE.
 
 Three very different ideas of what "semver" is from three different organizations that have a good amount of experience with CVEs. Keep digging through the data and you'll find a number of other variations like the github style where inequality symbols are used in the version strings (sorry). What you end up with is a tool that needs to do some heuristic test and then switches to one of a few dozen parsers. And has healthy error handling. It's a lot. I'm lazy so I didn't write any of that. Instead I wrote some code[^code] to help me get a handle on the scope of the problem. This code goes through every CVE record, pulls out version strings which were labeled as `semver` then tries to validate them against [an off the shelf semver parser](https://pypi.org/project/semver/). Is this a good parser? No idea[^1], but a heck of a lot of people use it, so it's an important parser.
 
-Only 44% of CVEs pass the test[^2]. Put another way, if you pull a "semver" version string out of a CVE record it has slightly better odds to fail semver validation than to pass. Oof.
+Only 44% of CVEs pass the test[^2].If you pull a "semver" version string out of a record it has slightly better odds to fail semver validation than to pass. Oof.
 
 ### Are the CNAs wrong?
 
