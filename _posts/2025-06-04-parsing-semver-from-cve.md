@@ -71,7 +71,7 @@ from HPE. Three very different ideas of what "semver" is from three different or
 
 Only 44% of CVEs pass the test. Put another way, if you pull a "semver" version string out of a CVE record it has slightly better odds to fail semver validation than to pass. Oof.
 
-### Are they wrong?
+### Are the CNAs wrong?
 
 Are those CNAs publishing semver values wrong? Should we go yell at them? In short. No. You or I or anyone else might look at the string `ECOS 9.3.x.x: 9.3.3.0 and below` and say 
 > clearly this is not a semantic versioning compliant string 
@@ -88,15 +88,21 @@ and then an example using `*` which is labeled as semver. `*` is not a valid cha
 
 ### Who is the data for?
 
-Part of the problem is that there doesn't seem to be a clear customer persona for who reads CVEs. In my opinion the primary reader of a CVE is someone who wants to fix/address/resolve/paper over whatever vulnerability is described in the CVE. A precondition to fixing a problem is knowing that the problem affects you and to resolve the question "does CVE X affect me?" you need to know what products you use and what products the CVE applies to. There's a product naming problem there too, but lets ignore that for the moment and consider that we've matched on some product identifier. Do the versions match? Lets also restrict the problem space and assert that every piece of software uses semantic versioning. If we have a product match then we simply need to check if the versions of the product we use are contained in the version ranges listed as affected on the CVE record. That means parsing the record and that means making sense of the chaos that may be in it.
+Part of the problem is that there doesn't seem to be a clear customer persona for who reads CVEs. In my opinion the primary reader of a CVE is someone who wants to fix/address/resolve/paper over whatever vulnerability is described in the CVE. A precondition to fixing a problem is knowing that the problem affects you and to resolve the question 
+> does CVE X affect me? 
+
+you need to know what products you use and what products the CVE applies to. There's a product naming problem there too, but lets ignore that for the moment and consider that we've matched on some product identifier. Do the versions match? Lets also restrict the problem space and assert that every piece of software uses semantic versioning. If we have a product match then we simply need to check if the versions of the product we use are contained in the version ranges listed as affected on the CVE record. That means parsing the record and that means making sense of the chaos that may be in it.
 
 ## A path forward
 
 If you look at the data captured in the CVE records you can find a number of patterns. Iterating them all isn't really worth it imo. The simple existence of independent patterns sharing a single identifier already tells us what we need to fix. Each publisher is trying to express to their reader `Yo, this thing be broken!` with varying levels metadata and prose to enrich that core statement. The record format seems to have been designed in such a way that it didn't want to be a blocker and that is a good thing. Where I think the format has failed is that it has prevented these publishers from encoding their data in a more useful format when they are able to.
 
-The CVE system is going through a lot right now. I don't want to comment much on that since I don't really understand it, but there's a lot of machinery out there in the world built on CVEs  that I care about. That machinery can and should be better leveraged to secure the software we all use but, it would be a shame to have to rebuild all of it. So, I suggest iterative improvement in small, measurable, and concrete ways. I think a workable step is to start allowing for a progressive precision. CNAs are publishing "semver" today. Let's give them a path to improve and perfect that. An approachable attitude could be to say "You want to use something else? Come define it and provide validation". A doable goal can be to provide validated input for the input we already get. We can make concrete one type at a time and compose these concrete types to make complex expressions.
+The CVE system is going through a lot right now. I don't want to comment much on that since I don't really understand it, but there's a lot of machinery out there in the world built on CVEs  that I care about. That machinery can and should be better leveraged to secure the software we all use but, it would be a shame to have to rebuild all of it. So, I suggest iterative improvement in small, measurable, and concrete ways. I think a workable step is to start allowing for a progressive precision. CNAs are publishing "semver" today. Let's give them a path to improve and perfect that. An approachable attitude could be to say 
+> You want to use something else? Come define it and provide validation. 
 
-Let the grand ideas be discussed later. Let's work on some patches.
+A doable goal can be to provide validated input for the input we already get. We can make concrete one type at a time and compose these concrete types to make complex expressions.
+
+So, let the grand ideas be discussed later. Let's work on some small patches.
 
 `Thanks for reading`
 
