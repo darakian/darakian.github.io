@@ -15,7 +15,7 @@ I've been pushing a schema change to CVE for the last half year or so. I started
 
 The new behavior is that if one wants to submit a CVE record with a semver-2.0.0 then the version values MUST conform with the official semantic versioning regular expression. The ordering rules that semantic versioning defines SHOULD also be observed, but you can't enforce that in a schema.
 
-Also, if you are reading this blog post and are not already involved in the PR please don't get involved. If you'd like to show your support please just 👍 the first comment.
+Also, if you're reading this blog post and are not already involved in the PR please don't get involved. If you'd like to show your support please just 👍 the first comment.
 
 ## But why tho?
 
