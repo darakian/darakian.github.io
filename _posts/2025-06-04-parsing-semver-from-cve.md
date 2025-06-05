@@ -78,7 +78,8 @@ from HPE
 }
 ```
 https://github.com/CVEProject/cvelistV5/blob/main/cves/2022/3xxx/CVE-2022-3405.json
-From Acronis
+
+from Acronis
 
 and
 ```
@@ -90,7 +91,8 @@ and
 }
 ```
 https://github.com/CVEProject/cvelistV5/blob/main/cves/2024/29xxx/CVE-2024-29736.json
-From Apache.
+
+from Apache.
 
 A few very different ideas of what "semver" is from a few different organizations that have a good amount of experience with CVEs. Keep digging through the data and you'll find a number of other variations like the github style where inequality symbols are used in the version strings (sorry). If you want to parse an arbitrary record you end up with a tool that needs to do some heuristic test to identify a sub-pattern and then switches to one of a few dozen parsers to actually parse it. Also it needs to have healthy error handling for each case and for new cases that might exist in the future. It's a lot. I'm lazy so I didn't write any of that. Instead I wrote some code to help me get a handle on the scope of the problem[^code]. This code goes through every CVE record, pulls out version strings which were labeled as `semver` then tries to validate them against [an off the shelf semver parser](https://pypi.org/project/semver/). Is this a good parser? No idea, but a heck of a lot of people use it, so it's an important parser[^1].
 
