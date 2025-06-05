@@ -4,8 +4,6 @@ title:  "Parsing semver values from CVE records"
 date:   2025-06-04 14:00:00 -0700
 ---
 
-# Parsing semver values from CVE records
-
 ## Preliminaries
 
 I've been pushing a schema change to CVE for the last half year or so. I started [a conversation about formalizing what a version type means](https://github.com/CVEProject/cve-schema/issues/362) in a CVE record back in November of last year. The tl;dr though is that versioning in a CVE record is chaos. From that conversation I spun up a [pull request to formalize semantic versioning](https://github.com/CVEProject/cve-schema/pull/371). That pull request has a lot going on, but the salient points are 
