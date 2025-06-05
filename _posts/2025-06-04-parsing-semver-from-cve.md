@@ -50,7 +50,7 @@ We've got this
     "versionType": "semver"
 }
 ```
-From (CERTVDE also from 2023)[https://github.com/CVEProject/cvelistV5/blob/main/cves/2023/1xxx/CVE-2023-1150.json]
+From [CERTVDE also from 2023](https://github.com/CVEProject/cvelistV5/blob/main/cves/2023/1xxx/CVE-2023-1150.json)
 
 
 ```
@@ -61,7 +61,7 @@ From (CERTVDE also from 2023)[https://github.com/CVEProject/cvelistV5/blob/main/
     "versionType": "semver"
 },
 ```
-from (HPE in 2024)[https://github.com/CVEProject/cvelistV5/blob/main/cves/2024/41xxx/CVE-2024-41133.json]
+from [HPE in 2024](https://github.com/CVEProject/cvelistV5/blob/main/cves/2024/41xxx/CVE-2024-41133.json)
 
 ```
 {
@@ -71,7 +71,8 @@ from (HPE in 2024)[https://github.com/CVEProject/cvelistV5/blob/main/cves/2024/4
     "versionType": "semver"
 }
 ```
-from (Acronis in 2022)[https://github.com/CVEProject/cvelistV5/blob/main/cves/2022/3xxx/CVE-2022-3405.json]
+from [Acronis in 2022](https://github.com/CVEProject/cvelistV5/blob/main/cves/2022/3xxx/CVE-2022-3405.json)
+
 
 and
 ```
@@ -82,7 +83,7 @@ and
     "versionType": "semver"
 }
 ```
-from (Apache in 2024)[https://github.com/CVEProject/cvelistV5/blob/main/cves/2024/29xxx/CVE-2024-29736.json]
+from [Apache in 2024](https://github.com/CVEProject/cvelistV5/blob/main/cves/2024/29xxx/CVE-2024-29736.json)
 
 A few very different ideas of what "semver" is from a few different organizations that have a good amount of experience with CVEs. Keep digging through the data and you'll find a number of other variations like the github style where inequality symbols are used in the version strings (sorry). If you want to parse an arbitrary record you end up with a tool that needs to do some heuristic test to identify a sub-pattern and then switches to one of a few dozen parsers to actually parse it. Also it needs to have healthy error handling for each case and for new cases that might exist in the future. It's a lot. I'm lazy so I didn't write any of that. Instead I wrote some code to help me get a handle on the scope of the problem[^code]. This code goes through every CVE record, pulls out version strings which were labeled as `semver` then tries to validate them against [an off the shelf semver parser](https://pypi.org/project/semver/). Is this a good parser? No idea, but a heck of a lot of people use it, so it's an important parser[^1].
 
