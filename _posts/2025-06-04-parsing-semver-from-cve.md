@@ -102,7 +102,7 @@ Semver is mentioned by name and there's even a link out to semver.org when you v
 
 > In any version range, the details of the version syntax and semantics depend on the version type, but by convention, "version": "0" means that the range has no lower bound, and a * in an upper bound denotes “infinity”, as in "lessThan": "2.\*", which denotes a range where the 2.X version series is the upper bound, or "lessThan": "\*", which denotes a range with no upper bound at all.
 
-and then an example using `*` which is labeled as semver. `*` is not a valid character in a semver string. So, the docs have introduced us to the concept of version types, mention that semver is one of the anointed few and then show an example ruleset which is incompatible with what one would assume is ruleset for `semver`. A few more examples follow, but no formal rules are presented. No logic one could follow to check is one string or another valid. We lack a validation check and so we can't actually assert that any string is invalid. Any string is valid and so the type is unbounded. It is chaos.
+and then an example using `*` which is labeled as semver. `*` is not a valid character in a semver string. So, the docs have introduced us to the concept of version types, mention that semver is one of the anointed few and then show an example ruleset which is incompatible with what one would assume is the ruleset for `semver`. A few more examples follow, but no formal rules are presented. No logic one could follow to check is one string or another valid. We lack a validation check and so we can't actually assert that any string is invalid. Any string is valid and so the type is unbounded. It is chaos.
 
 ### Who is the data for?
 
