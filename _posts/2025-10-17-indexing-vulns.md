@@ -40,7 +40,7 @@ So, what can we do with these commits? Well, if we have a copy of the source rep
 
 The commit  
 [https://github.com/pyca/cryptography/commit/1ca7adc97b76a9dfbd3d850628b613eb93b78fc3](https://github.com/pyca/cryptography/commit/1ca7adc97b76a9dfbd3d850628b613eb93b78fc3)  
-Which fixes an SSH certificate handling issue and is well documented here  
+Which fixes an SSH certificate handling issue and is listed here  
 [https://github.com/advisories/GHSA-cf7p-gm2m-833m](https://github.com/advisories/GHSA-cf7p-gm2m-833m)  
 
 in this case we happen to have an introductory commit as well  
