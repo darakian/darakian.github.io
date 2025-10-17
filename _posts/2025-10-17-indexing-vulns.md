@@ -18,7 +18,7 @@ There are two types of vulnerabilities: those that are publicly known and those 
 
 For a while now we've collected advisories about known vulnerabilities, annotated them with useful metadata, clarified language, enriched them with meaningful context, and made them available to a reader base which has tastes and preferences. Package metadata in particular has proven to be pretty useful in that it allows a developer with an arbitrary codebase to check against a set of code that they're likely to have. Ecosystems are how that's been communicated and the choice of ecosystem is pretty much down to popularity and a namespace. 
 
-Take a look at the [most popular languages on githib](https://github.blog/news-insights/octoverse/octoverse-2024/)
+Take a look at the [most popular languages on githib](https://github.blog/news-insights/octoverse/octoverse-2024/#the-most-popular-programming-languages)
 
 ![Octoverse 2024 report](https://github.blog/wp-content/uploads/2024/10/GitHub-Octoverse-2024-top-programming-languages.png?w=1400)
 
