@@ -38,22 +38,23 @@ Go search github for your favorite CVE number and marvel at the number of people
 
 So, what can we do with these commits? Well, if we have a copy of the source repo we can ask the question "Does the repo at some point contain this fix?". Maybe we can't take as fact that not having the commit implies that the code is vulnerable to whatever issue that commit fixed, but we can be certain that if our codebase has the commit then the issue is fixed. This of course assumes truth and that's why you have curators, but let's explore this example a bit more
 
-The commit https://github.com/pyca/cryptography/commit/1ca7adc97b76a9dfbd3d850628b613eb93b78fc3  
+The commit  
+[https://github.com/pyca/cryptography/commit/1ca7adc97b76a9dfbd3d850628b613eb93b78fc3](https://github.com/pyca/cryptography/commit/1ca7adc97b76a9dfbd3d850628b613eb93b78fc3)  
 Which fixes an SSH certificate handling issue and is well documented here  
-https://github.com/advisories/GHSA-cf7p-gm2m-833m  
+[https://github.com/advisories/GHSA-cf7p-gm2m-833m](https://github.com/advisories/GHSA-cf7p-gm2m-833m)  
 
 in this case we happen to have an introductory commit as well  
-https://github.com/pyca/cryptography/commit/aca8de845e751dd45fe4e48f8492f357d34d1861  
+[https://github.com/pyca/cryptography/commit/aca8de845e751dd45fe4e48f8492f357d34d1861](https://github.com/pyca/cryptography/commit/aca8de845e751dd45fe4e48f8492f357d34d1861)  
 shout outs to github user tiran for that  
-https://github.com/github/advisory-database/pull/2620
+[https://github.com/github/advisory-database/pull/2620](https://github.com/github/advisory-database/pull/2620)
 
 Now cryptography is a project that has adopted a provenance solution called sigstore and that lets us trace back the origin of any published artifact like this one  
-https://pypi.org/project/cryptography/46.0.1/#cryptography-46.0.1-pp311-pypy311_pp73-manylinux_2_34_aarch64.whl  
+[https://pypi.org/project/cryptography/46.0.1/#cryptography-46.0.1-pp311-pypy311_pp73-manylinux_2_34_aarch64.whl](https://pypi.org/project/cryptography/46.0.1/#cryptography-46.0.1-pp311-pypy311_pp73-manylinux_2_34_aarch64.whl)  
 
 back to a specific commit  
-https://github.com/pyca/cryptography/commit/e735cfc27502320101c130335c556394a125ba52  
+[https://github.com/pyca/cryptography/commit/e735cfc27502320101c130335c556394a125ba52](https://github.com/pyca/cryptography/commit/e735cfc27502320101c130335c556394a125ba52)  
 via a build log  
-https://search.sigstore.dev/?logIndex=527528656  
+[https://search.sigstore.dev/?logIndex=527528656](https://search.sigstore.dev/?logIndex=527528656)  
 
 
 You could imagine building a system to iterate the specific artifacts, go inspect the upstream code at the specific commit for the release and check for both of introductory and fix commits. Now we can derive affected versions rather than having humans index on them. Maybe we could even track these artifacts as they get encapsulated in other objects. There could be other commit types which are interesting too, but intro and fix commits seem like enough to test the theory and to keep the task of the operator scoped. The down side here is that legacy artifacts don't have provenance information and so the readership for such an ecosystem is limited for now.
