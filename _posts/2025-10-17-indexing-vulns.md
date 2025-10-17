@@ -43,7 +43,7 @@ The commit
 Which fixes an SSH certificate handling issue and is listed here  
 [https://github.com/advisories/GHSA-cf7p-gm2m-833m](https://github.com/advisories/GHSA-cf7p-gm2m-833m)  
 
-in this case we happen to have an introductory commit as well  
+in this case happens to come along with an introductory commit as well  
 [https://github.com/pyca/cryptography/commit/aca8de845e751dd45fe4e48f8492f357d34d1861](https://github.com/pyca/cryptography/commit/aca8de845e751dd45fe4e48f8492f357d34d1861)  
 shout outs to github user tiran for that  
 [https://github.com/github/advisory-database/pull/2620](https://github.com/github/advisory-database/pull/2620)
