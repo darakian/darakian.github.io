@@ -2,7 +2,7 @@
 
 layout: post
 
-title:  "How and why to index vulnerabilities"
+title:  "How and why we index vulnerabilities"
 
 date:   2025-10-17 12:00:00 -0700
 
