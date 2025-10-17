@@ -50,7 +50,6 @@ shout outs to github user tiran for that
 
 Now cryptography is a project that has adopted a provenance solution called sigstore and that lets us trace back the origin of any published artifact like this one  
 [https://pypi.org/project/cryptography/46.0.1/#cryptography-46.0.1-pp311-pypy311_pp73-manylinux_2_34_aarch64.whl](https://pypi.org/project/cryptography/46.0.1/#cryptography-46.0.1-pp311-pypy311_pp73-manylinux_2_34_aarch64.whl)  
-
 back to a specific commit  
 [https://github.com/pyca/cryptography/commit/e735cfc27502320101c130335c556394a125ba52](https://github.com/pyca/cryptography/commit/e735cfc27502320101c130335c556394a125ba52)  
 via a build log  
