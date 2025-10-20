@@ -16,13 +16,14 @@ There are two types of vulnerabilities: those that are publicly known and those 
 
 ## Package oriented indexing 
 
-For a while now we've collected advisories about known vulnerabilities, annotated them with useful metadata, clarified language, enriched them with meaningful context, and made them available to a reader base which has tastes and preferences. Package metadata in particular has proven to be pretty useful in that it allows a developer with an arbitrary codebase to check against a set of code that they're likely to have. Ecosystems are how that's been communicated and the choice of ecosystem is pretty much down to popularity and a namespace. 
+For a while now we've collected advisories about known vulnerabilities, annotated them with useful metadata, clarified language, enriched them with meaningful context, and made them available to a reader base which has tastes and preferences. Package metadata in particular has proven to be pretty useful in that it allows a developer with an arbitrary codebase to check against a set of code that they're likely to have. The term Ecosystem has been used to communicate this metadata and for the purposes of this post I'll be limiting the discussion of the term to mean "a meaningful namespace for the purposes of communicating advisory information". The choice of which ecosystems we care about is also largely informed by popularity.
 
-Take a look at the [most popular languages on githib](https://github.blog/news-insights/octoverse/octoverse-2024/#the-most-popular-programming-languages)
+
+Take a look at the [most popular languages on github](https://github.blog/news-insights/octoverse/octoverse-2024/#the-most-popular-programming-languages)
 
 ![Octoverse 2024 report](https://github.blog/wp-content/uploads/2024/10/GitHub-Octoverse-2024-top-programming-languages.png?w=1400)
 
-You'll note that most of them have a popular package registry (or registry system) that lends a namespace. These make for easy ecosystems.
+You'll note that most of them have a popular package registry (or registry system) that lends a namespace. These are well understood and make for easy ecosystems.
 
 The problem with this approach is that it's inherently limited. Each ecosystem has its own sense of what a version is, what a package name can be, what can be inside, or where they're hosted. They're all quirky in their own ways and to scale you need to keep adding ecosystems which are decreasingly popular and thus increasingly hard to justify. To make things worse the more of the nuance you want to capture (as a benefit to the reader) the harder you make the job of the curator which may limit (in practical terms) the size of your corpus. Just as there's no sense in indexing using some new index if no one cares, so too it may not be worthwhile catering to every niche reader if the cognitive load of the curator is raised to an unworkable level. In practical application it may be worth simplifying your index for the benefit of your curator. Specific goals, timelines, and teams should inform choices about ecosystem specificity. Ecosystem design must consider operational constraints.
 
