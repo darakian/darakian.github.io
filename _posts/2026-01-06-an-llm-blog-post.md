@@ -87,7 +87,7 @@ The deepseek x llama collab gave output like
   ```
 In observation I found deepseek x llama to be better at capturing the correct numbers and keeping them consistent over the lifetime of the iterations, but it loves to up the severity of any given vuln and the constant `Okay, I'm....` really kills it from an automation point of view. Maybe that's a feature in more "reasoning" models. Unclear.
 
-The winner almost is probably the phi-4 model with this as a representative example
+The winner is probably the phi-4 model with this as a representative example
 ```
   {
     "model": "microsoft/phi-4",
