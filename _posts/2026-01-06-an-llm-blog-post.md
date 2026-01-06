@@ -113,13 +113,13 @@ In short though they all have issues and I wouldn't directly put this output in 
 
 Each model had its own distribution. One of the phi-4 runs looked like
 
-<img src="https://raw.githubusercontent.com/darakian/darakian.github.io/refs/heads/master/_images/2026-01-06-an-llm-blog-post/phi-4.png" alt="phi-4 reading scores plotted" style="width:75%; height:auto;">
+<img src="https://raw.githubusercontent.com/darakian/darakian.github.io/refs/heads/master/_images/2026-01-06-an-llm-blog-post/phi-4.png" alt="phi-4 reading scores plotted" style="width:100%; height:auto;">
 
 The top tick there is `30` and the bottom is `-10`. Negative scores are valid.
 
 Each model had its own flavor of distribution and I'm not sure what questions to really ask of the data, so I won't dwell on these. What I thought might be more interesting is comparing the models against each other.
 
-<img src="https://raw.githubusercontent.com/darakian/darakian.github.io/refs/heads/master/_images/2026-01-06-an-llm-blog-post/averages.png" alt="Average reading scores across models" style="width:75%; height:auto;">
+<img src="https://raw.githubusercontent.com/darakian/darakian.github.io/refs/heads/master/_images/2026-01-06-an-llm-blog-post/averages.png" alt="Average reading scores across models" style="width:100%; height:auto;">
 
 The top tick on this one is `50` and the bottom one is `10`.
 
