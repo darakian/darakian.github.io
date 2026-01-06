@@ -8,7 +8,7 @@ date:   2026-01-06 12:00:00 -0700
 
 ---
 
-Large language models are all the rage these days. Everyone's working on them ([or else 😰](https://www.businessinsider.com/github-ceo-developers-embrace-ai-or-get-out-2025-8)) and they're showing up in [everything](https://github.com/daviddao/awful-ai).  I have not been a fan though I do see the appeal of natural language programming, boiler plate free development, and of capturing the expertises of transient humans. That said, I get the sense that the hype is coming less from the theory, design, or scale behind statisical language models and more from a desire to degrade the economic value held by cantankerous humans. It's worth noting up front that we've been here before. We've made [languages designed for the everyman](https://en.wikipedia.org/wiki/COBOL). We've made [chatbots that have convinced us of their intelligence](https://en.wikipedia.org/wiki/ELIZA). We've made [systems designed to capture the expertiese of those we employ](https://en.wikipedia.org/wiki/Expert_system) in an effort to scale the individual/reduce the relative value of labor. We are not without history and we are not without observable results. What's that saying? Those who cannot remember the past are destined to meet their KPIs? I dunno, something like that.
+Large language models are all the rage these days. Everyone's working on them ([or else 😰](https://www.businessinsider.com/github-ceo-developers-embrace-ai-or-get-out-2025-8)) and they're showing up in [everything](https://github.com/daviddao/awful-ai).  I have not been a fan though I do see the appeal of natural language programming, boiler plate free development, and of capturing the expertises of transient humans. That said, I get the sense that the hype is coming less from the theory, design, or scale behind statistical language models and more from a desire to degrade the economic value held by cantankerous humans. It's worth noting up front that we've been here before. We've made [languages designed for the everyman](https://en.wikipedia.org/wiki/COBOL). We've made [chatbots that have convinced us of their intelligence](https://en.wikipedia.org/wiki/ELIZA). We've made [systems designed to capture the expertise of those we employ](https://en.wikipedia.org/wiki/Expert_system) in an effort to scale the individual/reduce the relative value of labor. We are not without history and we are not without observable results. What's that saying? Those who cannot remember the past are destined to meet their KPIs? I dunno, something like that.
 
 ## Language models. What are they good for? Are they good at things? Lets find out!
 
@@ -20,7 +20,7 @@ Automation is not the enemy. The lack of accountability is and if we're going tr
 
 ### Pelicans
 
-A few months back I came across the a facinating language model benchmark. The so called [Pelicans on a bicycle](https://www.robert-glaser.de/agentic-pelican-on-a-bicycle/) benchmark. The basic idea is to ask a language model to generate some novel new thing and then to iterate on the output asking the model to "improve" the output. While not something that can be objectively measured one can tease out what "improvement" is for each of the models. 
+A few months back I came across the a fascinating language model benchmark. The so called [Pelicans on a bicycle](https://www.robert-glaser.de/agentic-pelican-on-a-bicycle/) benchmark. The basic idea is to ask a language model to generate some novel new thing and then to iterate on the output asking the model to "improve" the output. While not something that can be objectively measured one can tease out what "improvement" is for each of the models. 
 
 ## The experiment
 
@@ -35,7 +35,7 @@ The code for this experiment is fairly compact and is available below
 
 ### Buy local
 
-Any good experiement attempts to reduce the number of variables to as few as possible and the ever changing nature of hosted language models makes it functionally impossible to design a repeatable experiment. Therefore they are not useful to me. Thankfully language models are just code and a number of open source (open weight?) models are floating around online. For this escapade I've gone with models available on [huggingface.co](https://huggingface.co/). In particular I settled on the [phi-4](https://huggingface.co/microsoft/phi-4), [Qwen-2.5 (7B)](https://huggingface.co/Qwen/Qwen2.5-7B), and [DeepSeek-R1-Distill-Llama-8B](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-8B). I played with a few other models, but these three had reasonable reputations and would run on my laptop (m1 max w/ 64GB) in a reasonable amount of time. I had hoped to use the recent gpt-oss-20b, however it seems that for macs an [m2 or later is required](https://huggingface.co/openai/gpt-oss-20b/discussions/84#6899673cbd96d56e462f15a0).
+Any good experiment attempts to reduce the number of variables to as few as possible and the ever changing nature of hosted language models makes it functionally impossible to design a repeatable experiment. Therefore they are not useful to me. Thankfully language models are just code and a number of open source (open weight?) models are floating around online. For this escapade I've gone with models available on [huggingface.co](https://huggingface.co/). In particular I settled on the [phi-4](https://huggingface.co/microsoft/phi-4), [Qwen-2.5 (7B)](https://huggingface.co/Qwen/Qwen2.5-7B), and [DeepSeek-R1-Distill-Llama-8B](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-8B). I played with a few other models, but these three had reasonable reputations and would run on my laptop (m1 max w/ 64GB) in a reasonable amount of time. I had hoped to use the recent gpt-oss-20b, however it seems that for macs an [m2 or later is required](https://huggingface.co/openai/gpt-oss-20b/discussions/84#6899673cbd96d56e462f15a0).
 
 ### The results
 
@@ -87,7 +87,7 @@ The deepseek x llama collab gave output like
   ```
 In observation I found deepseek x llama to be better at capturing the correct numbers and keeping them consistent over the lifetime of the iterations, but it loves to up the severity of any given vuln and the constant `Okay, I'm....` really kills it from an automation point of view. Maybe that's a feature in more "reasoning" models. Unclear.
 
-The winner almost is probably the phi-4 model with this as a representitive example
+The winner almost is probably the phi-4 model with this as a representative example
 ```
   {
     "model": "microsoft/phi-4",
@@ -107,7 +107,7 @@ The winner almost is probably the phi-4 model with this as a representitive exam
     ]
   },
   ```
-Not perfect by any means, but directly usable and sane at a glance. It's unclear what the `\n1`, `\n2` and `\n3` are about, but we've got a fairly consistent string of text almost immediatly and I couldn't find totally off the wall output like qwen would give. 
+Not perfect by any means, but directly usable and sane at a glance. It's unclear what the `\n1`, `\n2` and `\n3` are about, but we've got a fairly consistent string of text almost immediately and I couldn't find totally off the wall output like qwen would give. 
 
 In short though they all have issues and I wouldn't directly put this output in front of anyone who cared about the product in question. I thought it might be interesting to look at something a little more objective and after a bit of looking I found an interesting python library called [textstat](https://github.com/textstat/textstat). This library aims to measure the complexity of text to a reader and it does some with some industry standard measures. To be clear I do not understand these measures, but I thought it might be neat to try out. I went with [Flesch–Kincaid readability](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests) measure since it was the first in the list of examples and had the "higher number better" property. Eg. A higher number is easier to read.
 
@@ -119,12 +119,12 @@ Each model had its own flavor of distribution and I'm not sure what questions to
 
 ![Average reading scores across models](https://raw.githubusercontent.com/darakian/darakian.github.io/refs/heads/master/_images/2026-01-06-an-llm-blog-post/averages.png)
 
-What seems to be common is that each model reduces the readability over iterations. Looking back at the phi-4 runs all plotted out on their own line I'm not sure I would have guessed that the readability scores will average lower, but it's interesting to see. It's also interesting that each model also has its own band of readability which does match my observation above.
+What seems to be common is that each model reduces the readability over iterations. Looking back at the phi-4 runs all plotted out on their own line I'm not sure I would have guessed that the readability scores will average lower, but it's interesting to see. It's also interesting that each model also has its own band of readability which does match my observation above. For context a score of 10 is deemed as a `Professional` reading level while 50 is deemed to be early college level. The observed differences are far less significant than the starting point for each model as well.
 
 
 ## The conclusion?
 
-Advisory publication is an act of creation. It is an art form. It is not a probablistic generation question and so I do not see value in LLMs for advisory publication. Research tool? Maybe. Style guide checker? Sure, why not. Generator? Absolutely not.
+Advisory publication is an act of creation. It is an art form. It is not a probabilistic generation question and so I do not see value in LLMs for advisory publication. Research tool? Maybe. Style guide checker? Sure, why not. Generator? Absolutely not.
 
 `thanks for reading`
 
@@ -146,107 +146,107 @@ from dataclasses import dataclass, asdict
 
 @dataclass
 class PromptLineage:
-	model: str
-	input_prompt: str
-	generations: list[str]
+  model: str
+  input_prompt: str
+  generations: list[str]
 
-	def add_generation(self, new_text):
-		self.generations.append(new_text)
+  def add_generation(self, new_text):
+    self.generations.append(new_text)
 
-	def get_most_recent_generation(self):
-		return self.generations[-1]
+  def get_most_recent_generation(self):
+    return self.generations[-1]
 
 def random_versions():
-	upper = random.randrange(1, 256)
-	lower = round(random.uniform(0.1, upper), 3)
-	upper = num2words.num2words(upper)
-	lower = num2words.num2words(lower)
+  upper = random.randrange(1, 256)
+  lower = round(random.uniform(0.1, upper), 3)
+  upper = num2words.num2words(upper)
+  lower = num2words.num2words(lower)
 
-	range_phrases = [
-		f"from {lower} up to but not including {upper}",
-		f"since but not including {lower} up to {upper}",
-		f"from {lower} up to {upper}",
-		f"since but not including {lower} up to but not including {upper}",
-		]
+  range_phrases = [
+    f"from {lower} up to but not including {upper}",
+    f"since but not including {lower} up to {upper}",
+    f"from {lower} up to {upper}",
+    f"since but not including {lower} up to but not including {upper}",
+    ]
 
-	return random.choice(range_phrases)
+  return random.choice(range_phrases)
 
 
 def random_prompt():
-	product_names = [
-	"Yellow Vest Linux",
-	"Elaborate Text Storage Service",
-	"Datcord",
-	"jrc",
-	"Kazoo",
-	"Doors",
-	"An actual car",
-	"Smart Fridge 8000",
-	]
+  product_names = [
+  "Yellow Vest Linux",
+  "Elaborate Text Storage Service",
+  "Datcord",
+  "jrc",
+  "Kazoo",
+  "Doors",
+  "An actual car",
+  "Smart Fridge 8000",
+  ]
 
-	product_components = [
-	"user settings",
-	"regular storage place",
-	"secret storage place",
-	"transport",
-	]
+  product_components = [
+  "user settings",
+  "regular storage place",
+  "secret storage place",
+  "transport",
+  ]
 
-	severity = [
-		"low",
-		"medium",
-		"high",
-		"critical",
-	]
+  severity = [
+    "low",
+    "medium",
+    "high",
+    "critical",
+  ]
 
-	problems = [
-		"cross site scripting",
-		"memory safety",
-		"data exposure",
-		"logic injection",
-		"hard coded credentials",
-	]
+  problems = [
+    "cross site scripting",
+    "memory safety",
+    "data exposure",
+    "logic injection",
+    "hard coded credentials",
+  ]
 
-	prompt_string = (f"The product named {random.choice(product_names)}"
-					f" which has a {random.choice(severity)} severity {random.choice(problems)}"
-					f" vulnerability in {random.choice(product_components)}"
-					f" in the versions {random_versions()}"
-		)
+  prompt_string = (f"The product named {random.choice(product_names)}"
+          f" which has a {random.choice(severity)} severity {random.choice(problems)}"
+          f" vulnerability in {random.choice(product_components)}"
+          f" in the versions {random_versions()}"
+    )
 
-	return prompt_string
+  return prompt_string
 
 def improve_advisory(pipe, prompt):
-	messages = [
-		{"role": "system", "content": "You are an editor tasked with ensuring complete, concise and correct advisories are sent out for our users. Remove unnecessary content and refine the advisory provided. Only reply with the new advisory."},
-		{"role": "user", "content": prompt},
-	]
-	outputs = pipe(messages)
-	result = outputs[0]["generated_text"][-1]
-	return result["content"]
+  messages = [
+    {"role": "system", "content": "You are an editor tasked with ensuring complete, concise and correct advisories are sent out for our users. Remove unnecessary content and refine the advisory provided. Only reply with the new advisory."},
+    {"role": "user", "content": prompt},
+  ]
+  outputs = pipe(messages)
+  result = outputs[0]["generated_text"][-1]
+  return result["content"]
 
 def generate_advisories(model, count):
-	pipeline = transformers.pipeline(task="text-generation", model=model, device_map="auto", dtype=torch.bfloat16)
-	prompt_evolutions = []
+  pipeline = transformers.pipeline(task="text-generation", model=model, device_map="auto", dtype=torch.bfloat16)
+  prompt_evolutions = []
 
-	for i in range(0, count):
+  for i in range(0, count):
 
-		prompt = PromptLineage(
-			model,
-			random_prompt(),
-			[])
+    prompt = PromptLineage(
+      model,
+      random_prompt(),
+      [])
 
-		messages = [
-		{"role": "system", "content": "Write a security advisory for the product and problem provided. Keep it short and to the point"},
-		{"role": "user", "content": prompt.input_prompt},
-		]
-		outputs = pipeline(messages)
-		prompt.add_generation(outputs[0]["generated_text"][-1]["content"])
+    messages = [
+    {"role": "system", "content": "Write a security advisory for the product and problem provided. Keep it short and to the point"},
+    {"role": "user", "content": prompt.input_prompt},
+    ]
+    outputs = pipeline(messages)
+    prompt.add_generation(outputs[0]["generated_text"][-1]["content"])
 
-		for i in range(0,5):
-			prompt.add_generation(improve_advisory(pipeline, prompt.get_most_recent_generation()))
+    for i in range(0,5):
+      prompt.add_generation(improve_advisory(pipeline, prompt.get_most_recent_generation()))
 
-		prompt_evolutions.append(asdict(prompt))
+    prompt_evolutions.append(asdict(prompt))
 
-	return prompt_evolutions
+  return prompt_evolutions
 
 ## Uncomment the one you want to run
 # model = "Qwen/Qwen2.5-7B"
