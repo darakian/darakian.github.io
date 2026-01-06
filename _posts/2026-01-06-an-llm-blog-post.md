@@ -113,11 +113,11 @@ In short though they all have issues and I wouldn't directly put this output in 
 
 Each model had its own distribution. One of the phi-4 runs looked like
 
-![phi-4 reading scores plotted](https://raw.githubusercontent.com/darakian/darakian.github.io/refs/heads/master/_images/2026-01-06-an-llm-blog-post/phi-4.png)
+<img src="https://raw.githubusercontent.com/darakian/darakian.github.io/refs/heads/master/_images/2026-01-06-an-llm-blog-post/phi-4.png" alt="phi-4 reading scores plotted" style="width:50%; height:auto;">
 
 Each model had its own flavor of distribution and I'm not sure what questions to really ask of the data, so I won't dwell on these. What I thought might be more interesting is comparing the models against each other.
 
-![Average reading scores across models](https://raw.githubusercontent.com/darakian/darakian.github.io/refs/heads/master/_images/2026-01-06-an-llm-blog-post/averages.png)
+<img src="https://raw.githubusercontent.com/darakian/darakian.github.io/refs/heads/master/_images/2026-01-06-an-llm-blog-post/averages.png" alt="Average reading scores across models" style="width:50%; height:auto;">
 
 What seems to be common is that each model reduces the readability over iterations. Looking back at the phi-4 runs all plotted out on their own line I'm not sure I would have guessed that the readability scores will average lower, but it's interesting to see. It's also interesting that each model also has its own band of readability which does match my observation above. For context a score of 10 is deemed as a `Professional` reading level while 50 is deemed to be early college level. The observed differences are far less significant than the starting point for each model as well.
 
