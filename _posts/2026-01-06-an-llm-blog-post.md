@@ -111,7 +111,7 @@ Not perfect by any means, but directly usable and sane at a glance. It's unclear
 
 In short though they all have issues and I wouldn't directly put this output in front of anyone who cared about the product in question. I thought it might be interesting to look at something a little more objective and after a bit of looking I found an interesting python library called [textstat](https://github.com/textstat/textstat). This library aims to measure the complexity of text to a reader and it does some with some industry standard measures. To be clear I do not understand these measures, but I thought it might be neat to try out. I went with [Flesch–Kincaid readability](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests) measure since it was the first in the list of examples and had the "higher number better" property. Eg. A higher number is easier to read.
 
-Each model had its own distribution. One of the phi-4 runs looked like
+Each model had its own distribution of readability changes over iterations. One of the phi-4 runs looked like
 
 <img src="https://raw.githubusercontent.com/darakian/darakian.github.io/refs/heads/master/_images/2026-01-06-an-llm-blog-post/phi-4.png" alt="phi-4 reading scores plotted" style="width:100%; height:auto;">
 
