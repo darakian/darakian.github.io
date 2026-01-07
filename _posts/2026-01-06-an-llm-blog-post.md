@@ -121,9 +121,9 @@ Each model had its own flavor of distribution and I'm not sure what questions to
 
 <img src="https://raw.githubusercontent.com/darakian/darakian.github.io/refs/heads/master/_images/2026-01-06-an-llm-blog-post/averages.png" alt="Average reading scores across models" style="width:100%; height:auto;">
 
-The top tick on this one is `50` and the bottom one is `10`.
+The top tick on this one is `50` and the bottom one is `10`. Phi-4 is at the bottom in blue, Qwen in orange in the middle and Deepseek in green at the top with the easiest to read descriptions.
 
-What seems to be common is that each model reduces the readability over iterations. Looking back at the phi-4 runs all plotted out on their own line I'm not sure I would have guessed that the readability scores will average lower, but it's interesting to see. It's also interesting that each model also has its own band of readability which does match my observation above. For context a score of 10 is deemed as a `Professional` reading level while 50 is deemed to be early college level. The observed differences are far less significant than the starting point for each model as well.
+What seems to be common is that each model reduces the readability over iterations. Looking back at the phi-4 runs all plotted out on their own line I'm not sure I would have guessed that the readability scores will average lower, but it's interesting to see. It's also interesting that each model also has its own band of readability which does match my observation above. For context a score of 10 is deemed as a `Professional` reading level while 50 is deemed to be early college level. The observed differences are far less significant than the starting point for each model as well, though in the case of Phi-4 it's possible the formatting is what's driving the score down so much.
 
 
 ## The conclusion?
