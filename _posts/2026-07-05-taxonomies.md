@@ -8,8 +8,6 @@ date:   2026-07-05 12:00:00 -0700
 
 ---
 
-# The unreasonable effectiveness of component taxonomies in vulnerability management
-
 ## Intro 
 
 Flaws exist in things. If there is no "thing" there can be no flaw as there is nothing at all. I hope you agree that if there is no product/component/library/whatever then by definition there can be no flaw or vulnerability. If not we'll need to grab food sometime and chat, but I'll assume you the reader agree for the time being.
