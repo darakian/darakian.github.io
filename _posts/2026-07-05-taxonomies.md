@@ -2,7 +2,7 @@
 
 layout: post
 
-title:  "The unreasonable effectiveness of component taxonomies in vulnerability management"
+title:  "The unreasonable effectiveness of component taxonomies"
 
 date:   2026-07-05 12:00:00 -0700
 
