@@ -104,6 +104,6 @@ Taxonomies don't have to be perfect to be useful. If we consider the package tax
 2. Does not gracefully handle the nesting of software. Multiple affected entries are required
 3. Does not completely handle version strings for the ecosystems it does support
 
-and yet flaws can be delivered immediately following publication; flaws can be inspected, interrogated, and understood; and a complete set of flaws can be retrieved for any component in the taxonomy.
+and yet flaws can be delivered immediately following publication, flaws can be inspected, interrogated, and understood; and a complete set of flaws can be retrieved for any component in the taxonomy.
 
 The CVE specification supports the package url specification and the purl specification is an open community that welcomes growth. If this is the sort of thing you're interested in come join the [PURL community](https://github.com/package-url/purl-spec), expand it with your pet taxonomy, or help clarify and disambiguate the ones we already have. If you're not a specs person then start using the purl spec. Add them to your CVEs if you're a bug hunter, index with them if you're a vulnerability manager. We can't let perfect be the enemy of good. We need visibility into our vulnerabilities and we need more librarians in the world of vulnerability management in order to achieve that.
