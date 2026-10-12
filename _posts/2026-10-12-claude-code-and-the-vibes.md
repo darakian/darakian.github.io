@@ -180,7 +180,7 @@ def count_vowels(string):
 
 Does any of this matter? We'll find out.
 
-# Deferred maintinance my beloved
+# Deferred maintenance my beloved
 
 Deploying at the speed of light means also taking on tech debt at the speed of light. Container sets grow. Database tables grow. Cloud infrastructure simply grows with the life of the `Agentic`-ness. Code complexity grows with time as well and that's a bigger issue to me because the time is takes anyone to onboard to a new codebase is a function of the complexity of the codebase (or the bit they care about). Super charging the complexity growth of a codebase is going to mean that you'll need tools to manage that complexity and that is exactly what an LLM IDE is good at. I think it's telling that open source projects are limiting their exposure to these tools.
 
